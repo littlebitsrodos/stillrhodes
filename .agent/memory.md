@@ -24,7 +24,14 @@ those — session-by-session drift, user preferences, things in flight.
   Implemented LifeOS project standards.
 - **2026-03-28:** V3 launch — Nano aesthetic variant, AI-generated hero,
   slower motion. Not adopted as canonical.
-- **2026-04-22:** Moved project out of LifeOS vault to standalone git repo at
-  `/Users/littlebits/Developer/rhodes-meditation/`. Extracted full design
-  system into `DESIGN.md`. Added root `CLAUDE.md` pointing at it. First run
-  of a landing-page pipeline the user is building for client work.
+- **2026-04-22 (session 1):** Moved project out of LifeOS vault to standalone
+  git repo at `/Users/littlebits/Developer/rhodes-meditation/`. Extracted
+  full design system into `DESIGN.md`. Added root `CLAUDE.md` pointing at
+  it. Cleaned up stale Rhodes Meditation remnants in costomenu-brain (half-
+  finished PARA-isolation cleanup from March). First run of the landing-page
+  pipeline Yorgos is building for client work.
+- **2026-04-22 (session 2):** Fixed two pre-ship defects: scroll-reveal
+  visibility bug (chapters invisible to crawlers / non-scrolling users —
+  commit `ebf7d26`) and George's surname misspelling in index.html
+  (`eca0b3f`). Merged both branches to main; 6 linear commits. See
+  `/todo.md` "Resume here" for next-session pointer.
