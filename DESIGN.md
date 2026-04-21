@@ -10,7 +10,7 @@ Any change to these tokens should be made here first, then propagated to CSS.*
 ## Product Context
 
 - **What this is:** A bilingual (Greek primary, English secondary) one-page site
-  for George Ananiadis (Γιώργος Αναννιάδης), certified meditation teacher based
+  for George Ananiadis (Γιώργος Ανανιάδης), certified meditation teacher based
   in Rhodes, Greece. Offers group sessions in the Medieval Town and Faliraki,
   plus private sessions on request.
 - **Who it's for:** Tourists and locals searching for meditation in Rhodes;
