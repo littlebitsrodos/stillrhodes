@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# transient
+*.tmp
+*.log
+.agent/memory.md.bak
+
+# reference scrapes (not part of the shipped site)
+Instagram.html
+Instagram_files/

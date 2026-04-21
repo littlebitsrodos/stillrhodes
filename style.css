@@ -1,0 +1,546 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap');
+
+:root {
+  /* Core Palette - Inspired by Rhodes and Meditation */
+  --cream: #faf8f5;
+  --warm-black: #2d2a26;
+  --gold: #9e8a5f;
+  --gold-muted: rgba(158, 138, 95, 0.2);
+  --sea: #5a7a7a;
+  --sea-muted: rgba(90, 122, 122, 0.1);
+  --rose: #a67f6f;
+  --muted: rgba(45, 42, 38, 0.5);
+  
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(250, 248, 245, 0.7);
+  --glass-border: rgba(45, 42, 38, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(45, 42, 38, 0.08);
+  --blur-amount: 12px;
+  
+  /* Spacing & Transitions */
+  --safe-padding: 2rem;
+  --transition-slow: 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-med: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Touch optimizations */
+a, button {
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+/* Smooth scroll only when no motion preference */
+@media (prefers-reduced-motion: no-preference) {
+  html { scroll-behavior: smooth; }
+}
+
+/* Kill animations for users who request it */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 300;
+  background: var(--cream);
+  color: var(--warm-black);
+  line-height: 1.85;
+  font-size: 19px;
+  overflow-x: hidden;
+  transition: background-color var(--transition-med);
+}
+
+/* Typography Enhancements */
+h1, h2, h3, .garamond {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Glassmorphic Utilities */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 2px; /* Keeping it sharp for a minimalist look */
+}
+
+/* Lang Toggle - Glassmorphic */
+.lang-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  background: rgba(45, 42, 38, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 4px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.lang-btn {
+  background: transparent;
+  border: none;
+  color: rgba(255,255,255,0.6);
+  font-family: 'EB Garamond', serif;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  transition: all var(--transition-med);
+  border-radius: 2px;
+}
+
+.lang-btn.active {
+  color: #fff;
+  background: rgba(255,255,255,0.15);
+}
+
+/* Hero - Presence centered */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem var(--safe-padding);
+  background: url('photos/sunset.jpeg') center/cover no-repeat;
+  position: relative;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInPresence var(--transition-slow) forwards;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(250, 248, 245, 0.8) 0%, rgba(250, 248, 245, 0.2) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@keyframes fadeInPresence {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.hero .intro {
+  font-style: italic;
+  color: var(--muted);
+  font-size: 1.2rem;
+  max-width: 600px;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.hero .intro::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 1px;
+  background: var(--gold);
+}
+
+/* Chapters - The Narrative Path */
+.chapter {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8rem var(--safe-padding);
+  position: relative;
+}
+
+.chapter h2 {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chapter h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-muted);
+}
+
+.chapter p {
+  margin-bottom: 2.2rem;
+  transition: color var(--transition-med);
+}
+
+.chapter p:hover {
+  color: var(--warm-black);
+}
+
+/* Aside - The Silent Voice */
+.aside {
+  margin: 5rem 0;
+  padding: 3rem;
+  background: var(--sea-muted);
+  font-style: italic;
+  color: var(--sea);
+  position: relative;
+  border-radius: 2px;
+}
+
+.aside::before {
+  content: '"';
+  position: absolute;
+  top: -1rem;
+  left: 1.5rem;
+  font-size: 5rem;
+  font-family: 'EB Garamond', serif;
+  opacity: 0.1;
+}
+
+/* Image Break - Parallax feel */
+.image-break {
+  width: 100%;
+  height: 90vh;
+  background-attachment: fixed;
+  background-position: center 85%;
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  filter: grayscale(20%) contrast(1.05);
+  margin: 4rem 0;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.1);
+}
+
+/* Sessions - The Practice Space */
+.sessions-chapter {
+  background: var(--warm-black);
+  color: var(--cream);
+  padding: 8rem var(--safe-padding);
+}
+
+.session-card {
+  padding: 2.5rem;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all var(--transition-med);
+  margin-bottom: 2rem;
+}
+
+.session-card:hover {
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+.session-card h3 {
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+/* Contact - Integration */
+.contact-section {
+  padding: 10rem var(--safe-padding);
+  text-align: center;
+  background: linear-gradient(to bottom, var(--cream), #f0ede9);
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--warm-black);
+  padding: 1.2rem 3rem;
+  border: 1px solid var(--warm-black);
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  transition: all var(--transition-med);
+  position: relative;
+  overflow: hidden;
+}
+
+.whatsapp-btn:hover {
+  background: var(--warm-black);
+  color: var(--cream);
+}
+
+/* Language visibility — display:none has no transition, opacity rule removed */
+body.lang-en [data-lang="el"]:not(.lang-btn) { display: none; }
+body.lang-el [data-lang="en"]:not(.lang-btn) { display: none; }
+
+/* Profile Section */
+.profile-section {
+  padding: 8rem var(--safe-padding);
+  background: linear-gradient(to bottom, var(--cream), #f5f2ee);
+}
+
+.profile-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.profile-photo-wrap {
+  position: sticky;
+  top: 6rem;
+}
+
+.profile-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  object-fit: cover;
+  object-position: center top;
+  filter: grayscale(15%);
+  border-radius: 2px;
+  box-shadow: 0 20px 60px rgba(45, 42, 38, 0.12);
+}
+
+.profile-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.profile-name {
+  font-family: 'EB Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--warm-black);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+}
+
+.profile-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.profile-tags span {
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--gold-muted);
+  padding: 0.3rem 0.8rem;
+  border-radius: 2px;
+}
+
+.profile-bio p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+}
+
+.profile-cert {
+  margin: 2.5rem 0;
+  padding: 1.5rem;
+  border-left: 2px solid var(--gold);
+  background: var(--gold-muted);
+}
+
+.cert-badge {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cert-title {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.cert-body {
+  font-size: 0.85rem;
+  color: var(--warm-black);
+  line-height: 1.6;
+}
+
+.profile-cta {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'EB Garamond', serif;
+  font-size: 1.15rem;
+  padding: 1rem 2.5rem;
+  border-radius: 2px;
+  transition: background var(--transition-med), transform var(--transition-med);
+  margin-top: 1rem;
+}
+
+.profile-cta:hover {
+  background: #1ebe5d;
+  transform: translateY(-2px);
+}
+
+.profile-cta-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.75rem;
+  letter-spacing: 0.03em;
+}
+
+
+/* Certification strip */
+.certification {
+  margin-top: 3rem;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--gold-muted);
+  padding-top: 1rem;
+  color: var(--gold);
+}
+
+/* Sessions heading */
+.sessions-title {
+  color: var(--gold);
+}
+
+/* Inline text link */
+.text-link {
+  color: var(--sea);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity var(--transition-med);
+}
+.text-link:hover { opacity: 0.7; }
+
+/* Session price */
+.session-price {
+  color: var(--gold);
+  margin-top: 1rem;
+}
+
+/* Footer sub-line */
+.footer-sub {
+  margin-top: 1rem;
+}
+
+/* Contact tagline */
+.contact-tagline {
+  margin-bottom: 3rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+/* Footer */
+.site-footer {
+  padding: 5rem 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--muted);
+  background: #f0ede9;
+}
+
+/* ── Mobile ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  :root { --safe-padding: 1.25rem; }
+
+  body { font-size: 17px; }
+
+  /* Hero: gradient top→bottom on portrait so text is readable */
+  .hero {
+    justify-content: flex-end;
+    padding-bottom: 4rem;
+    min-height: 100svh;
+  }
+  .hero::before {
+    background: linear-gradient(to top, rgba(250,248,245,0.92) 0%, rgba(250,248,245,0.1) 100%);
+  }
+  .hero h1 { font-size: clamp(2.2rem, 10vw, 3rem); }
+
+  /* Lang toggle — min 44px tap target */
+  .lang-btn { padding: 0.75rem 1.1rem; font-size: 1rem; }
+
+  /* Chapters */
+  .chapter { padding: 4rem var(--safe-padding); }
+  .aside { padding: 2rem 1.5rem; margin: 3rem 0; }
+
+  /* Image break */
+  .image-break { height: 70vh; }
+
+  /* Sessions */
+  .sessions-chapter { padding: 4rem var(--safe-padding); }
+  .session-card { padding: 1.75rem; }
+  /* Remove hover lift on touch — it sticks */
+  .session-card:hover { transform: none; }
+
+  /* Profile */
+  .profile-section { padding: 4rem var(--safe-padding); }
+  .profile-inner {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .profile-photo-wrap {
+    position: static;
+    display: flex;
+    justify-content: center;
+  }
+  .profile-photo {
+    width: 160px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-position: center 20%;
+  }
+  /* Full-width CTA on mobile = bigger tap target */
+  .profile-cta {
+    display: block;
+    text-align: center;
+    padding: 1.1rem 1.5rem;
+    font-size: 1.1rem;
+  }
+
+  /* Contact */
+  .contact-section { padding: 5rem var(--safe-padding); }
+  .whatsapp-btn {
+    display: block;
+    text-align: center;
+    padding: 1.1rem 1.5rem;
+  }
+
+  /* Footer */
+  .site-footer { padding: 3rem var(--safe-padding); }
+}
+
+/* iOS Safari: background-attachment:fixed crashes on touch devices */
+@media (hover: none) {
+  .image-break { background-attachment: scroll; }
+  .hero { background-attachment: scroll; }
+}

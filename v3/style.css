@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&family=Inter:wght@300;400&display=swap');
+
+:root {
+  /* Core Palette - Inspired by Rhodes and Meditation */
+  --cream: #faf8f5;
+  --warm-black: #2d2a26;
+  --gold: #9e8a5f;
+  --gold-muted: rgba(158, 138, 95, 0.2);
+  --sea: #5a7a7a;
+  --sea-muted: rgba(90, 122, 122, 0.1);
+  --rose: #a67f6f;
+  --muted: rgba(45, 42, 38, 0.5);
+  
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(250, 248, 245, 0.7);
+  --glass-border: rgba(45, 42, 38, 0.05);
+  --glass-shadow: 0 8px 32px 0 rgba(45, 42, 38, 0.08);
+  --blur-amount: 12px;
+  
+  /* Spacing & Transitions */
+  --safe-padding: 2rem;
+  --transition-slow: 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-med: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Spectral', Georgia, serif;
+  font-weight: 300;
+  background: var(--cream);
+  color: var(--warm-black);
+  line-height: 1.85;
+  font-size: 19px;
+  overflow-x: hidden;
+  transition: background-color var(--transition-med);
+}
+
+/* Typography */
+h1, h2, h3, .garamond {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.inter {
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Animations */
+.fade-in { opacity: 0; transform: translateY(20px); transition: all var(--transition-med); }
+.fade-in-delay { opacity: 0; transform: translateY(20px); transition: all var(--transition-med); transition-delay: 0.3s; }
+.visible { opacity: 1 !important; transform: translateY(0) !important; }
+
+/* Hero - Nano Banana Aesthetic */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem var(--safe-padding);
+  background: url('../photos/nano_banana.png') center/cover no-repeat;
+  position: relative;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(250, 248, 245, 0.9) 0%, rgba(250, 248, 245, 0.4) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero h1 {
+  font-size: clamp(3rem, 10vw, 5rem);
+  margin-bottom: 2rem;
+  letter-spacing: -0.03em;
+  color: var(--warm-black);
+}
+
+.nano-badge {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--muted);
+  z-index: 2;
+  writing-mode: vertical-rl;
+}
+
+/* Certification verify style */
+.verify-link {
+  color: var(--warm-black);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--gold-muted);
+  transition: border-color 0.3s;
+}
+
+.verify-link:hover {
+  border-color: var(--gold);
+}
+
+.icon-verify {
+  width: 16px;
+  height: 16px;
+  fill: var(--gold);
+}
+
+.school-subtitle {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Glass Panels */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--blur-amount));
+  -webkit-backdrop-filter: blur(var(--blur-amount));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  padding: 2.5rem;
+  transition: all var(--transition-med);
+}
+
+.glass-panel:hover {
+  transform: translateY(-5px);
+  border-color: var(--gold);
+}
+
+/* Chapter */
+.chapter {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 8rem var(--safe-padding);
+}
+
+.chapter h2 {
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 3.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.chapter h2::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--gold-muted);
+}
+
+/* Parallax Break */
+.parallax {
+  height: 60vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 4rem 0;
+}
+
+/* Language Switch */
+.lang-toggle {
+  position: fixed;
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 1000;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.lang-btn {
+  background: var(--glass-bg);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--glass-border);
+  color: var(--muted);
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  font-family: 'EB Garamond', serif;
+}
+
+.lang-btn.active {
+  color: var(--warm-black);
+  border-color: var(--gold);
+}
+
+/* Contact */
+.contact-section {
+  padding: 10rem var(--safe-padding);
+  text-align: center;
+  background: #f5f3f0;
+}
+
+.whatsapp-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: var(--warm-black);
+  padding: 1.2rem 3.5rem;
+  border: 1px solid var(--warm-black);
+  font-family: 'EB Garamond', serif;
+  font-size: 1.2rem;
+  transition: all 0.4s;
+}
+
+.whatsapp-btn:hover {
+  background: var(--warm-black);
+  color: var(--cream);
+}
