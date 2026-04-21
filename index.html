@@ -154,22 +154,27 @@
             });
         }
         
-        // Scroll animations — skipped if user prefers reduced motion
+        // Scroll-reveal: only hide elements below the initial viewport.
+        // Above-fold stays visible so crawlers, link-preview bots, and
+        // non-scrolling users see content without waiting on scroll.
         if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
+                        entry.target.classList.add('is-revealed');
+                        setTimeout(() => {
+                            entry.target.classList.remove('pre-reveal', 'is-revealed');
+                        }, 850);
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
 
             document.querySelectorAll('.chapter, .session-card').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(30px)';
-                el.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-                observer.observe(el);
+                if (el.getBoundingClientRect().top >= window.innerHeight) {
+                    el.classList.add('pre-reveal');
+                    observer.observe(el);
+                }
             });
         }
     </script>

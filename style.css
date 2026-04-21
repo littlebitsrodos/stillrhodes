@@ -469,6 +469,24 @@ body.lang-el [data-lang="en"]:not(.lang-btn) { display: none; }
   background: #f0ede9;
 }
 
+/* Scroll-reveal (JS-applied to below-fold elements only).
+   Default state stays visible for no-JS users, reduced-motion users, and
+   above-fold elements. After reveal, setTimeout(850) removes both classes
+   so the element returns to default CSS, preserving :hover transitions
+   on .session-card that would otherwise be outranked by specificity. */
+.chapter.pre-reveal,
+.session-card.pre-reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.chapter.pre-reveal.is-revealed,
+.session-card.pre-reveal.is-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 /* ── Mobile ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   :root { --safe-padding: 1.25rem; }
