@@ -71,6 +71,14 @@
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "WebSite",
+          "@id": "https://stillrhodes.com/#website",
+          "url": "https://stillrhodes.com/",
+          "name": "Still Rhodes",
+          "inLanguage": ["el", "en"],
+          "publisher": { "@id": "https://stillrhodes.com/#business" }
+        },
+        {
           "@type": "Person",
           "@id": "https://stillrhodes.com/#george",
           "name": "Γεώργιος Ανανιάδης",
@@ -100,6 +108,11 @@
               "name": "Yoga Alliance International (Europe & India)",
               "url": "https://www.yogaallianceinternationaleurope.org/"
             }
+          },
+          "alumniOf": {
+            "@type": "EducationalOrganization",
+            "name": "Amrita School of Meditation",
+            "location": { "@type": "Place", "name": "Crete, Greece" }
           }
         },
         {
@@ -108,9 +121,13 @@
           "name": "Still Rhodes",
           "description": "Meditation classes and private sessions in Rhodes, Greece — in the Medieval Town and by the sea in Faliraki.",
           "url": "https://stillrhodes.com/",
-          "image": "https://stillrhodes.com/photos/sunset.jpeg",
+          "image": [
+            "https://stillrhodes.com/photos/sunset.jpeg",
+            "https://stillrhodes.com/photos/george-cataluna.jpeg"
+          ],
           "telephone": "+306946138241",
           "priceRange": "€",
+          "availableLanguage": ["el", "en"],
           "address": {
             "@type": "PostalAddress",
             "addressLocality": "Rhodes",
@@ -133,6 +150,7 @@
           "name": "Group Meditation",
           "alternateName": "Ομαδικός Διαλογισμός",
           "description": "60-minute guided group meditation in Rhodes or Faliraki.",
+          "serviceType": "Meditation instruction",
           "provider": { "@id": "https://stillrhodes.com/#business" },
           "areaServed": [
             { "@type": "Place", "name": "Rhodes" },
@@ -151,6 +169,7 @@
           "name": "Private Meditation Session",
           "alternateName": "Ιδιωτική Συνεδρία",
           "description": "Private session tailored to the individual practitioner. Pricing on request.",
+          "serviceType": "Meditation instruction",
           "provider": { "@id": "https://stillrhodes.com/#business" },
           "offers": {
             "@type": "Offer",

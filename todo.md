@@ -42,6 +42,11 @@ uncommitted work.
 - [x] Tighten existing JSON-LD: added `knowsLanguage`, `sameAs` and
   `worksFor` on Person; pointed credential `url` at George's verifiable
   Yoga Alliance profile (done 2026-04-26).
+- [x] Audit JSON-LD against Google's search-gallery rich-result types;
+  added `WebSite` node, `Person.alumniOf` (Amrita School), `serviceType`
+  on both Services, `availableLanguage` on LocalBusiness, and a second
+  image. Skipped Course/Event/FAQ/Review/Video/Breadcrumb — would have
+  fabricated content (done 2026-04-26).
 
 ## 🎯 P2: Deployment
 - [ ] Choose Hosting (GitHub Pages / Netlify / Cloudflare Pages).
@@ -65,9 +70,8 @@ uncommitted work.
 - English SEO strategy (current client-side lang toggle hides EN from
   crawlers — may not matter, decide before deploy).
 - Schema.org expansion: model the two session offerings (Group €10/60min,
-  Private "upon arrangement") as `Service`/`Offer` entries. Skipped in the
-  initial tightening pass to avoid maintenance drift; reconsider if the
-  session menu stabilizes or grows.
+  Private "upon arrangement") as `Service`/`Offer` entries. **Done 2026-04-26**
+  — both Services live in the @graph with `serviceType: "Meditation instruction"`.
 
 ---
 next time (Yorgos's original notes):
