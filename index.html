@@ -51,15 +51,18 @@
     <link rel="preload" as="image" href="photos/sunset-1600.webp" type="image/webp" fetchpriority="high" media="(min-width: 800px)">
     <link rel="preload" as="image" href="photos/sunset-800.webp" type="image/webp" fetchpriority="high" media="(max-width: 799px)">
 
-    <!-- Fonts -->
+    <!-- LCP-critical font: EB Garamond Greek subset (h1 "Διαλογισμός στη Ρόδο") -->
+    <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek.woff2" crossorigin>
+
+    <!-- Fonts: EB Garamond is self-hosted (see style.css). Spectral + Inter from Google. -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap"
           media="print"
           onload="this.media='all'">
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap">
     </noscript>
 
     <!-- Styles -->
