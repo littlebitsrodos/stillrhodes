@@ -47,6 +47,16 @@ uncommitted work.
 - [ ] Choose Hosting (GitHub Pages / Netlify / Cloudflare Pages).
 - [ ] Configure Domain (stillrhodes.com if/when ready).
 - [ ] Final Mobile Responsiveness test.
+- [ ] Set up email forwarding via **ImprovMX** (free tier):
+  `giorgos@stillrhodes.com` → `littlebits.rodos@gmail.com`. Add ImprovMX's
+  MX + SPF records at the registrar, configure the alias in ImprovMX
+  dashboard, verify end-to-end. Decide later whether to upgrade to
+  Premium ($3/mo) for SMTP send-as, or keep receive-only.
+- [ ] After ImprovMX is live, add a DMARC TXT record so the domain isn't
+  trivially spoofable. Minimum viable:
+  `_dmarc.stillrhodes.com  TXT  "v=DMARC1; p=none; rua=mailto:giorgos@stillrhodes.com"`.
+  `p=none` is monitor-only — safe default; tighten to `quarantine`/`reject`
+  later once the `rua` reports show no legitimate senders are being missed.
 
 ## 📝 Deferred
 - Resolve v1 vs v3 reconciliation (see DESIGN.md "Unresolved" section).
