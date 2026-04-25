@@ -147,13 +147,12 @@ h1, h2, h3, .garamond {
   max-width: 900px;
   margin: 0 auto;
   width: 100%;
-  opacity: 0;
   transform: translateY(20px);
   animation: fadeInPresence var(--transition-slow) forwards;
 }
 
 @keyframes fadeInPresence {
-  to { opacity: 1; transform: translateY(0); }
+  to { transform: translateY(0); }
 }
 
 .hero h1 {
