@@ -31,6 +31,7 @@ uncommitted work.
   move — scoped commit takes 30 seconds.
 
 ## 🎯 P1: Design & Content (existing)
+- [ ] Add Yoga Alliance logos to the footer (credentialing badges).
 - [ ] SEO Audit: Check all meta tags and descriptions across versions.
 - [ ] Image Optimization: Convert large JPEGs to WebP for performance.
 - [ ] Language Consistency: Final proofread of Greek and English translations.
@@ -38,6 +39,9 @@ uncommitted work.
   `eca0b3f`).
 - [x] Fix scroll-reveal visibility bug so above-fold content renders at load
   (done 2026-04-22, commit `ebf7d26`).
+- [x] Tighten existing JSON-LD: added `knowsLanguage`, `sameAs` and
+  `worksFor` on Person; pointed credential `url` at George's verifiable
+  Yoga Alliance profile (done 2026-04-26).
 
 ## 🎯 P2: Deployment
 - [ ] Choose Hosting (GitHub Pages / Netlify / Cloudflare Pages).
@@ -50,6 +54,10 @@ uncommitted work.
 - Consider self-hosted fonts instead of Google Fonts CDN (privacy + perf).
 - English SEO strategy (current client-side lang toggle hides EN from
   crawlers — may not matter, decide before deploy).
+- Schema.org expansion: model the two session offerings (Group €10/60min,
+  Private "upon arrangement") as `Service`/`Offer` entries. Skipped in the
+  initial tightening pass to avoid maintenance drift; reconsider if the
+  session menu stabilizes or grows.
 
 ---
 next time (Yorgos's original notes):
