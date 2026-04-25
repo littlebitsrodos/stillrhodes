@@ -3,10 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
+    <!-- Pre-paint language gate: must run before stylesheet so the right
+         language is visible to first paint and to crawlers fetching ?lang=en. -->
+    <script>
+    (function(){
+      try {
+        var p = new URLSearchParams(location.search).get('lang');
+        var s = localStorage.getItem('lang');
+        var lang = (p === 'en' || p === 'el') ? p : (s === 'en' || s === 'el') ? s : 'el';
+        document.documentElement.lang = lang;
+        document.documentElement.dataset.lang = lang;
+      } catch(e){}
+    })();
+    </script>
+
     <!-- SEO & Metadata -->
     <title>Still Rhodes — Διαλογισμός στη Ρόδο με τον Γιώργο</title>
     <meta name="description" content="Εξερευνήστε τη σιωπή και τη διαφάνεια του νου. Μαθήματα διαλογισμού στη Ρόδο, ομαδικές και ιδιωτικές συνεδρίες στη Μεσαιωνική Πόλη και το Φαληράκι.">
+    <link rel="canonical" href="https://stillrhodes.com/">
+    <link rel="alternate" hreflang="el" href="https://stillrhodes.com/">
+    <link rel="alternate" hreflang="en" href="https://stillrhodes.com/?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://stillrhodes.com/">
 
     <!-- Open Graph -->
     <meta property="og:url" content="https://stillrhodes.com/">
@@ -29,6 +47,15 @@
     <!-- Icon -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
 
+    <!-- Hero LCP preload -->
+    <link rel="preload" as="image" href="photos/sunset-1600.webp" type="image/webp" fetchpriority="high" media="(min-width: 800px)">
+    <link rel="preload" as="image" href="photos/sunset-800.webp" type="image/webp" fetchpriority="high" media="(max-width: 799px)">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap">
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
 
@@ -44,10 +71,11 @@
           "alternateName": "George Ananiadis",
           "jobTitle": "Certified Meditation Teacher",
           "url": "https://stillrhodes.com/",
-          "image": "https://stillrhodes.com/photos/george%20cataluna.jpeg",
+          "image": "https://stillrhodes.com/photos/george-cataluna.jpeg",
           "knowsLanguage": ["el", "en"],
           "sameAs": [
-            "https://www.yogaallianceinternationaleurope.org/greece/rhodes/200-hour-certified-yoga-teacher/georgios-ananiadis"
+            "https://www.yogaallianceinternationaleurope.org/greece/rhodes/200-hour-certified-yoga-teacher/georgios-ananiadis",
+            "https://wa.me/306946138241"
           ],
           "worksFor": { "@id": "https://stillrhodes.com/#business" },
           "address": {
@@ -87,7 +115,46 @@
             { "@type": "Place", "name": "Rhodes" },
             { "@type": "Place", "name": "Faliraki" }
           ],
-          "founder": { "@id": "https://stillrhodes.com/#george" }
+          "founder": { "@id": "https://stillrhodes.com/#george" },
+          "makesOffer": [
+            { "@id": "https://stillrhodes.com/#group-session" },
+            { "@id": "https://stillrhodes.com/#private-session" }
+          ]
+        },
+        {
+          "@type": "Service",
+          "@id": "https://stillrhodes.com/#group-session",
+          "name": "Group Meditation",
+          "alternateName": "Ομαδικός Διαλογισμός",
+          "description": "60-minute guided group meditation in Rhodes or Faliraki.",
+          "provider": { "@id": "https://stillrhodes.com/#business" },
+          "areaServed": [
+            { "@type": "Place", "name": "Rhodes" },
+            { "@type": "Place", "name": "Faliraki" }
+          ],
+          "offers": {
+            "@type": "Offer",
+            "price": "10",
+            "priceCurrency": "EUR",
+            "availability": "https://schema.org/InStock"
+          }
+        },
+        {
+          "@type": "Service",
+          "@id": "https://stillrhodes.com/#private-session",
+          "name": "Private Meditation Session",
+          "alternateName": "Ιδιωτική Συνεδρία",
+          "description": "Private session tailored to the individual practitioner. Pricing on request.",
+          "provider": { "@id": "https://stillrhodes.com/#business" },
+          "offers": {
+            "@type": "Offer",
+            "priceSpecification": {
+              "@type": "PriceSpecification",
+              "priceCurrency": "EUR",
+              "description": "Upon arrangement"
+            },
+            "availability": "https://schema.org/InStock"
+          }
         }
       ]
     }
@@ -95,12 +162,19 @@
 </head>
 <body class="lang-el">
 
-    <nav class="lang-toggle">
-        <button class="lang-btn active" data-lang="el" onclick="setLang('el')">Ελ</button>
-        <button class="lang-btn" data-lang="en" onclick="setLang('en')">En</button>
+    <nav class="lang-toggle" aria-label="Language">
+        <button class="lang-btn active" data-lang="el" aria-pressed="true" onclick="setLang('el')">Ελ</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">En</button>
     </nav>
 
     <header class="hero">
+        <picture class="hero-bg">
+            <source type="image/webp"
+                    srcset="photos/sunset-800.webp 800w, photos/sunset-1600.webp 1600w"
+                    sizes="100vw">
+            <img src="photos/sunset.jpeg" alt="" width="1600" height="1200"
+                 fetchpriority="high" decoding="async">
+        </picture>
         <div class="hero-content">
             <h1>
                 <span data-lang="el">Διαλογισμός<br>στη Ρόδο</span>
@@ -144,7 +218,15 @@
             </aside>
         </section>
 
-        <section class="image-break" style="background-image: url('photos/george%20cataluna.jpeg');"></section>
+        <section class="image-break">
+            <picture>
+                <source type="image/webp"
+                        srcset="photos/george-cataluna-800.webp 800w, photos/george-cataluna-1600.webp 1600w"
+                        sizes="100vw">
+                <img src="photos/george-cataluna.jpeg" alt="" width="1200" height="1600"
+                     loading="lazy" decoding="async">
+            </picture>
+        </section>
 
         <section class="chapter">
             <h2>
@@ -220,17 +302,18 @@
     <script>
         function setLang(lang) {
             document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
             document.body.className = 'lang-' + lang;
             try { localStorage.setItem('lang', lang); } catch (e) {}
             document.querySelectorAll('.lang-btn').forEach(btn => {
-                btn.classList.toggle('active', btn.dataset.lang === lang);
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-pressed', active ? 'true' : 'false');
             });
         }
 
-        try {
-            const saved = localStorage.getItem('lang');
-            if (saved === 'el' || saved === 'en') setLang(saved);
-        } catch (e) {}
+        // Sync UI to whatever the pre-paint script (in <head>) decided.
+        setLang(document.documentElement.dataset.lang || 'el');
 
 
         // Scroll-reveal: only hide elements below the initial viewport.
