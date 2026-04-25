@@ -100,10 +100,10 @@ limestone) and meditation (warm neutrals, no saturated primaries).
 | `--sea`          | `#5a7a7a`                      | Inline text links, quote body. Dusty sea-green, not vivid. |
 | `--sea-muted`    | `rgba(90, 122, 122, 0.1)`     | Quote-block background wash. |
 | `--rose`         | `#a67f6f`                      | Defined but **currently unused** in live CSS. Reserved as warm accent. |
-| `--muted`        | `rgba(45, 42, 38, 0.7)`       | Subdued body — intros, captions, tags. Passes WCAG AA on cream and footer surfaces. |
+| `--muted`        | `rgba(45, 42, 38, 0.8)`       | Subdued body — intros, captions, tags. Passes WCAG AA on cream and footer surfaces. |
 
 **Rules of use:**
-- Body copy: `--warm-black` at full opacity. Subdued copy: `--muted` (70%).
+- Body copy: `--warm-black` at full opacity. Subdued copy: `--muted` (80%).
 - Links in body prose: `--sea`, underlined with `text-underline-offset: 3px`.
 - Section labels, prices, section-card headings: `--gold`.
 - Hover: border color shifts to `--gold` on cards and session blocks.
@@ -275,9 +275,11 @@ The lang-toggle itself uses a darker variant (`rgba(45, 42, 38, 0.55)` bg,
 - **Color contrast:** `--warm-black` on `--cream` = 10.8:1 (AAA). Gold on cream
   = 3.4:1 — borderline for body (fails AA for small text) but **only used for
   labels with `0.3em` letter-spacing that function as decorative headers**, not
-  as prose. Keep it that way. `--muted` (70% warm-black) on `--cream` and on
-  the footer's `#f0ede9` both pass WCAG AA (≥ 4.5:1) for small subdued text —
+  as prose. Keep it that way. `--muted` (80% warm-black) on `--cream` and on
+  the footer's `#f0ede9` both pass WCAG AA with comfortable margin (~6.8:1) —
   bumped from 50% on 2026-04-26 after a footer contrast failure on PageSpeed.
+  The first bump to 70% computed at 4.99:1, just under Lighthouse's threshold
+  in practice, so it was pushed to 80% for a robust pass.
 - **Small viewport units:** Hero uses `100svh` on mobile to dodge iOS Safari's
   browser-chrome recalculation.
 - **iOS background-attachment fallback:** `@media (hover: none)` swaps fixed
@@ -307,7 +309,7 @@ replace these ad-hoc values.
 | 2026-03-14 | Glassmorphism for lang-toggle only | Scarcity as signal |
 | 2026-03-28 | v3 "Nano Banana" aesthetic variant spun up | Explore AI-generated hero; slower motion; keeping as branch variant, not replacing v1 |
 | 2026-04-22 | Extracted DESIGN.md from existing CSS | Lock the system before any more visual work. Project also moved out of LifeOS vault to standalone repo. |
-| 2026-04-26 | Bump `--muted` opacity from 0.5 to 0.7 | Footer text failed WCAG AA contrast on PageSpeed audit |
+| 2026-04-26 | Bump `--muted` opacity from 0.5 to 0.8 | Footer text failed WCAG AA contrast on PageSpeed audit; 0.7 computed at 4.99:1 still failed in practice, 0.8 lands at ~6.8:1 |
 
 ## Unresolved / Future Decisions
 
