@@ -49,7 +49,7 @@ uncommitted work.
   fabricated content (done 2026-04-26).
 
 ## 🎯 P2: Deployment
-- [ ] Choose Hosting (GitHub Pages / Netlify / Cloudflare Pages).
+- [x] Choose Hosting → **GitHub Pages** (decided 2026-04-28).
 - [ ] Configure Domain (stillrhodes.com if/when ready).
 - [ ] Final Mobile Responsiveness test.
 - [ ] Set up email forwarding via **ImprovMX** (free tier):
@@ -63,10 +63,38 @@ uncommitted work.
   `p=none` is monitor-only — safe default; tighten to `quarantine`/`reject`
   later once the `rua` reports show no legitimate senders are being missed.
 
+## 🎯 P1: Operational (manual signups — Yorgos must do)
+- [ ] **UptimeRobot** — sign up at <https://uptimerobot.com> (free tier, 50
+  monitors, 5-min interval). Add a HTTP(s) monitor for
+  `https://stillrhodes.com/`. Alert email →
+  `littlebits.rodos@gmail.com` (or the future `giorgos@stillrhodes.com`
+  once ImprovMX is configured). Optional: add a 2nd monitor on
+  `/privacy` to catch "all paths broken" cases.
+- [ ] **Google Business Profile** — create or claim a profile at
+  <https://business.google.com>. Category: "Meditation Instructor" or
+  "Yoga Studio" (closest). Service area = Rhodes / Faliraki. Adds a Maps
+  card + boosts local-search ranking. Requires a phone-verified address
+  (not necessarily home address — service-area businesses can hide it).
+- [ ] *(Optional)* **TripAdvisor** — list as "Activity / Things to do →
+  Spa & Wellness" if/when George wants tourist discovery. Lower priority
+  than GBP. Skip if treating site as referral-only.
+
+## ✅ P0 audit fixes (2026-04-28)
+Shipped via commit `7cff4de` (audit: ship P0 fixes from new-site-checklist):
+- [x] 404.html (bilingual, noindex)
+- [x] privacy.html — Privacy Policy + GDPR + Imprint (φυσικό πρόσωπο,
+  no ΑΦΜ); footer link from index.html
+- [x] CSP + Referrer-Policy meta on all pages
+- [x] Self-host Spectral + Inter (drop fonts.googleapis.com)
+- [x] apple-touch-icon-180 (gold-on-cream, matches favicon design)
+- [x] Sitemap entry for /privacy + lastmod bump
+- [x] `scripts/bump-lastmod.sh` — run before commits to auto-bump dates
+- [x] `.github/workflows/check.yml` — lychee link-check on every push/PR
+
 ## 📝 Deferred
 - Resolve v1 vs v3 reconciliation (see DESIGN.md "Unresolved" section).
 - Replace `og:image` with absolute URL before deploy (`photos/PHOTO-...`).
-- Consider self-hosted fonts instead of Google Fonts CDN (privacy + perf).
+- ~~Consider self-hosted fonts instead of Google Fonts CDN.~~ **Done 2026-04-28** — Spectral (Latin) + Inter (Latin+Greek) self-hosted.
 - English SEO strategy (current client-side lang toggle hides EN from
   crawlers — may not matter, decide before deploy).
 - Schema.org expansion: model the two session offerings (Group €10/60min,

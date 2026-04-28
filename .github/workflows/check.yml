@@ -1,0 +1,27 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  links:
+    name: link-check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: lychee
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --base .
+            --no-progress
+            --max-concurrency 4
+            --accept 200,202,206,403,429
+            --exclude '^https://wa\.me/'
+            --exclude '^mailto:'
+            index.html privacy.html 404.html
+          fail: true
