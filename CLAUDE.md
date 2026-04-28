@@ -51,9 +51,17 @@ Greek is the default class on `<body>`. Do not hardcode English-only text.
 
 ## Project context
 
-- Domain target: `stillrhodes.com` (tentative).
-- Hosting: TBD (GitHub Pages / Netlify / Cloudflare Pages).
-- Contact CTA: WhatsApp (`wa.me/306946138241`).
+- Domain: `stillrhodes.com` (CNAME in repo).
+- Hosting: **GitHub Pages** (decided 2026-04-28). 404.html served on missing
+  paths automatically. Extensionless URLs supported (`/privacy` →
+  `privacy.html`).
+- Contact CTAs:
+  - WhatsApp: `wa.me/306946138241` (primary).
+  - Email: `georgiosananiadis87@gmail.com` (currently shipping; `giorgos@stillrhodes.com`
+    via ImprovMX is decided but not yet configured).
+- Legal status: George operates **informally as a private individual**
+  (φυσικό πρόσωπο). No ΑΦΜ on Imprint. If status changes, update
+  `privacy.html` Imprint section.
 - Photos: `photos/` — local only, never fetched from CDN.
 
 ## References

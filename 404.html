@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <script>
+    (function(){
+      try {
+        var p = new URLSearchParams(location.search).get('lang');
+        var s = localStorage.getItem('lang');
+        var lang = (p === 'en' || p === 'el') ? p : (s === 'en' || s === 'el') ? s : 'el';
+        document.documentElement.lang = lang;
+        document.documentElement.dataset.lang = lang;
+      } catch(e){}
+    })();
+    </script>
+
+    <title>404 — Still Rhodes</title>
+    <meta name="description" content="Η σελίδα δεν βρέθηκε.">
+    <meta name="robots" content="noindex">
+
+    <meta name="theme-color" content="#faf8f5">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek.woff2" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .notfound {
+        min-height: 70svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 4rem var(--safe-padding);
+        max-width: 720px;
+        margin: 0 auto;
+      }
+      .notfound .marker {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 2rem;
+      }
+      .notfound h1 {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        margin-bottom: 1.5rem;
+        letter-spacing: -0.01em;
+      }
+      .notfound p {
+        font-style: italic;
+        color: var(--muted);
+        margin-bottom: 3rem;
+        max-width: 480px;
+      }
+      .notfound .home-link {
+        font-family: 'EB Garamond', serif;
+        font-size: 1.1rem;
+        color: var(--warm-black);
+        text-decoration: none;
+        border-bottom: 1px solid var(--gold);
+        padding-bottom: 0.25rem;
+        transition: color var(--transition-med);
+      }
+      .notfound .home-link:hover { color: var(--gold); }
+    </style>
+</head>
+<body class="lang-el">
+
+    <nav class="lang-toggle" aria-label="Language">
+        <button class="lang-btn active" data-lang="el" aria-pressed="true" onclick="setLang('el')">Ελ</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">En</button>
+    </nav>
+
+    <main class="notfound">
+        <p class="marker">404</p>
+        <h1>
+            <span data-lang="el">Η σελίδα δεν βρέθηκε</span>
+            <span data-lang="en">Page not found</span>
+        </h1>
+        <p>
+            <span data-lang="el">Ίσως μια στιγμή για να σταματήσεις λίγο.</span>
+            <span data-lang="en">Perhaps a moment to pause.</span>
+        </p>
+        <a href="/" class="home-link">
+            <span data-lang="el">Επιστροφή στην αρχική</span>
+            <span data-lang="en">Return home</span>
+        </a>
+    </main>
+
+    <footer class="site-footer">
+        <p>© 2026 Still Rhodes</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+            document.body.className = 'lang-' + lang;
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+        }
+        setLang(document.documentElement.dataset.lang || 'el');
+    </script>
+</body>
+</html>

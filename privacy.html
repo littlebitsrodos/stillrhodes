@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <script>
+    (function(){
+      try {
+        var p = new URLSearchParams(location.search).get('lang');
+        var s = localStorage.getItem('lang');
+        var lang = (p === 'en' || p === 'el') ? p : (s === 'en' || s === 'el') ? s : 'el';
+        document.documentElement.lang = lang;
+        document.documentElement.dataset.lang = lang;
+      } catch(e){}
+    })();
+    </script>
+
+    <title>Πολιτική Απορρήτου · Privacy — Still Rhodes</title>
+    <meta name="description" content="Πολιτική απορρήτου και στοιχεία επικοινωνίας για το Still Rhodes.">
+    <link rel="canonical" href="https://stillrhodes.com/privacy">
+    <link rel="alternate" hreflang="el" href="https://stillrhodes.com/privacy">
+    <link rel="alternate" hreflang="en" href="https://stillrhodes.com/privacy?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://stillrhodes.com/privacy">
+
+    <meta name="theme-color" content="#faf8f5">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek.woff2" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+      .legal-header {
+        padding: 6rem var(--safe-padding) 2rem;
+        max-width: 720px;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .legal-header h1 {
+        font-size: clamp(2rem, 5vw, 2.8rem);
+        margin-bottom: 0.75rem;
+        letter-spacing: -0.01em;
+      }
+      .legal-header .updated {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.8rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .legal .chapter { padding-top: 4rem; padding-bottom: 4rem; }
+      .legal .chapter h2 { margin-bottom: 2.5rem; }
+      .legal .chapter p { margin-bottom: 1.6rem; }
+      .legal .chapter ul {
+        list-style: none;
+        margin: 0 0 2rem;
+      }
+      .legal .chapter ul li {
+        padding: 0.4rem 0;
+        border-bottom: 1px solid var(--gold-muted);
+        display: flex;
+        gap: 1rem;
+      }
+      .legal .chapter ul li:last-child { border-bottom: none; }
+      .legal .chapter ul li .label {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.85rem;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--gold);
+        min-width: 8rem;
+      }
+      .home-link {
+        font-family: 'EB Garamond', serif;
+        font-size: 1rem;
+        color: var(--warm-black);
+        text-decoration: none;
+        border-bottom: 1px solid var(--gold);
+        padding-bottom: 0.2rem;
+        transition: color var(--transition-med);
+      }
+      .home-link:hover { color: var(--gold); }
+      .legal-footer-link {
+        max-width: 720px;
+        margin: 0 auto 4rem;
+        padding: 0 var(--safe-padding);
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        .legal-header { padding: 4rem var(--safe-padding) 1rem; }
+        .legal .chapter ul li { flex-direction: column; gap: 0.25rem; }
+        .legal .chapter ul li .label { min-width: 0; }
+      }
+    </style>
+</head>
+<body class="lang-el">
+
+    <nav class="lang-toggle" aria-label="Language">
+        <button class="lang-btn active" data-lang="el" aria-pressed="true" onclick="setLang('el')">Ελ</button>
+        <button class="lang-btn" data-lang="en" aria-pressed="false" onclick="setLang('en')">En</button>
+    </nav>
+
+    <header class="legal-header">
+        <h1>
+            <span data-lang="el">Πολιτική Απορρήτου</span>
+            <span data-lang="en">Privacy Policy</span>
+        </h1>
+        <p class="updated">
+            <span data-lang="el">Τελευταία ενημέρωση · 28 Απριλίου 2026</span>
+            <span data-lang="en">Last updated · 28 April 2026</span>
+        </p>
+    </header>
+
+    <main class="legal">
+
+        <section class="chapter">
+            <h2>
+                <span data-lang="el">Συλλογή Δεδομένων</span>
+                <span data-lang="en">Data Collection</span>
+            </h2>
+            <div data-lang="el">
+                <p>Το <strong>stillrhodes.com</strong> είναι μια στατική σελίδα. Δεν συλλέγει, δεν αποθηκεύει και δεν επεξεργάζεται προσωπικά δεδομένα επισκεπτών. Δεν χρησιμοποιεί cookies παρακολούθησης, analytics, ή εργαλεία ανάλυσης συμπεριφοράς.</p>
+                <p>Το μόνο τοπικό δεδομένο που αποθηκεύεται είναι η προτίμηση γλώσσας (<code>lang</code>) στο localStorage του φυλλομετρητή σας — για να θυμάται την επιλογή σας στην επόμενη επίσκεψη. Παραμένει στη συσκευή σας και δεν αποστέλλεται πουθενά. Μπορείτε να την καθαρίσετε ανά πάσα στιγμή από τις ρυθμίσεις του browser.</p>
+            </div>
+            <div data-lang="en">
+                <p><strong>stillrhodes.com</strong> is a static site. It does not collect, store, or process personal visitor data. It uses no tracking cookies, no analytics, and no behavioural tools.</p>
+                <p>The only local datum stored is your language preference (<code>lang</code>) in your browser's localStorage — so the site remembers your choice on return visits. It stays on your device and is not transmitted. You can clear it at any time via your browser settings.</p>
+            </div>
+        </section>
+
+        <section class="chapter">
+            <h2>
+                <span data-lang="el">Επικοινωνία</span>
+                <span data-lang="en">Contact</span>
+            </h2>
+            <div data-lang="el">
+                <p>Όταν μας στέλνετε μήνυμα μέσω <strong>WhatsApp</strong> ή email, τα στοιχεία της επικοινωνίας (όνομα, αριθμός, μήνυμα) επεξεργάζονται αποκλειστικά για να σας απαντήσουμε. Δεν χρησιμοποιούνται για διαφημιστικούς σκοπούς και δεν διαβιβάζονται σε τρίτους.</p>
+                <p>Η συνομιλία WhatsApp υπόκειται στους <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-link">όρους ιδιωτικότητας της Meta</a>.</p>
+            </div>
+            <div data-lang="en">
+                <p>When you message us via <strong>WhatsApp</strong> or email, your contact details (name, number, message) are used solely to reply. They are not used for marketing and are not shared with third parties.</p>
+                <p>WhatsApp conversations fall under <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-link">Meta's privacy terms</a>.</p>
+            </div>
+        </section>
+
+        <section class="chapter">
+            <h2>
+                <span data-lang="el">Δικαιώματα GDPR</span>
+                <span data-lang="en">GDPR Rights</span>
+            </h2>
+            <div data-lang="el">
+                <p>Σύμφωνα με τον Γενικό Κανονισμό για την Προστασία Δεδομένων (GDPR), έχετε δικαίωμα πρόσβασης, διόρθωσης και διαγραφής των στοιχείων σας. Για οποιοδήποτε αίτημα, επικοινωνήστε στα στοιχεία που αναφέρονται παρακάτω.</p>
+            </div>
+            <div data-lang="en">
+                <p>Under the General Data Protection Regulation (GDPR), you have the right to access, correct, and delete your information. For any request, contact us using the details below.</p>
+            </div>
+        </section>
+
+        <section class="chapter">
+            <h2>
+                <span data-lang="el">Στοιχεία Υπεύθυνου</span>
+                <span data-lang="en">Imprint</span>
+            </h2>
+            <ul>
+                <li>
+                    <span class="label" data-lang="el">Όνομα</span>
+                    <span class="label" data-lang="en">Name</span>
+                    <span>
+                        <span data-lang="el">Γεώργιος Ανανιάδης</span>
+                        <span data-lang="en">George Ananiadis</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="label" data-lang="el">Δραστηριότητα</span>
+                    <span class="label" data-lang="en">Activity</span>
+                    <span>
+                        <span data-lang="el">Πιστοποιημένος εκπαιδευτής διαλογισμού</span>
+                        <span data-lang="en">Certified meditation instructor</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="label" data-lang="el">Έδρα</span>
+                    <span class="label" data-lang="en">Location</span>
+                    <span>
+                        <span data-lang="el">Ρόδος, Ελλάδα</span>
+                        <span data-lang="en">Rhodes, Greece</span>
+                    </span>
+                </li>
+                <li>
+                    <span class="label" data-lang="el">WhatsApp</span>
+                    <span class="label" data-lang="en">WhatsApp</span>
+                    <span><a href="https://wa.me/306946138241" class="text-link">+30 694 6138 241</a></span>
+                </li>
+                <li>
+                    <span class="label" data-lang="el">Email</span>
+                    <span class="label" data-lang="en">Email</span>
+                    <span><a href="mailto:georgiosananiadis87@gmail.com" class="text-link">georgiosananiadis87@gmail.com</a></span>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <p class="legal-footer-link">
+        <a href="/" class="home-link">
+            <span data-lang="el">Επιστροφή στην αρχική</span>
+            <span data-lang="en">Return home</span>
+        </a>
+    </p>
+
+    <footer class="site-footer">
+        <p>© 2026 Still Rhodes</p>
+    </footer>
+
+    <script>
+        function setLang(lang) {
+            document.documentElement.lang = lang;
+            document.documentElement.dataset.lang = lang;
+            document.body.className = 'lang-' + lang;
+            try { localStorage.setItem('lang', lang); } catch (e) {}
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                const active = btn.dataset.lang === lang;
+                btn.classList.toggle('active', active);
+                btn.setAttribute('aria-pressed', active ? 'true' : 'false');
+            });
+        }
+        setLang(document.documentElement.dataset.lang || 'el');
+    </script>
+</body>
+</html>

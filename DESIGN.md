@@ -56,8 +56,19 @@ not the other way around.)*
 
 ## Typography
 
-All three families are served from Google Fonts via a single `@import` in CSS.
-No self-hosting yet (future perf work — see `todo.md`).
+All three families are **self-hosted** via `@font-face` in `style.css`
+(no third-party CDN, no preconnect needed). Subsets:
+
+- **EB Garamond:** Greek + Latin (display, h1/h2/h3 — Greek subset preloaded
+  in `<head>` for LCP).
+- **Spectral:** Latin only. *Spectral has no Greek subset on Google Fonts*,
+  so when body copy is in Greek, the browser falls back to Georgia (the
+  next entry in the body font-stack) — a known compromise.
+- **Inter:** Latin + Greek (UI labels need both).
+
+Latin-ext / Greek-ext / Cyrillic / Vietnamese subsets are intentionally
+not shipped — site copy is monotonic Greek + plain English with no
+diacritics requiring them.
 
 | Role            | Family       | Weight(s) used | Italic | Notes |
 |-----------------|--------------|----------------|--------|-------|
@@ -310,6 +321,7 @@ replace these ad-hoc values.
 | 2026-03-28 | v3 "Nano Banana" aesthetic variant spun up | Explore AI-generated hero; slower motion; keeping as branch variant, not replacing v1 |
 | 2026-04-22 | Extracted DESIGN.md from existing CSS | Lock the system before any more visual work. Project also moved out of LifeOS vault to standalone repo. |
 | 2026-04-26 | Bump `--muted` opacity from 0.5 to 0.8 | Footer text failed WCAG AA contrast on PageSpeed audit; 0.7 computed at 4.99:1 still failed in practice, 0.8 lands at ~6.8:1 |
+| 2026-04-28 | Self-host all web fonts (EB Garamond + Spectral + Inter) | Drop third-party CDN, enable strict CSP without `style-src https://fonts.googleapis.com` / `font-src https://fonts.gstatic.com`, remove DNS handshake on first paint. ~135KB of new woff2 in `fonts/`. |
 
 ## Unresolved / Future Decisions
 
@@ -329,8 +341,6 @@ Items that came up during extraction that need a human decision:
   effectively invisible to search. Decide if this matters.
 - **Image optimization.** JPEGs are not WebP; no responsive `srcset`. Per
   `todo.md`.
-- **Self-hosted fonts vs Google Fonts CDN.** Current: Google Fonts CDN. Future:
-  consider self-hosting for privacy + perf.
 
 ---
 

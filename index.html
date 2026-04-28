@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- Security: CSP via meta (GitHub Pages doesn't let us set HTTP headers).
+         'unsafe-inline' is required for the pre-paint lang gate and the
+         inline onclick handlers on .lang-btn. Tighten by refactoring those
+         to addEventListener + a hashed inline script if we ever do a build step. -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
     <!-- Pre-paint language gate: must run before stylesheet so the right
          language is visible to first paint and to crawlers fetching ?lang=en. -->
     <script>
@@ -44,8 +51,9 @@
     <!-- Mobile -->
     <meta name="theme-color" content="#faf8f5">
 
-    <!-- Icon -->
+    <!-- Icons -->
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- Hero LCP preload -->
     <link rel="preload" as="image" href="photos/sunset-1600.webp" type="image/webp" fetchpriority="high" media="(min-width: 800px)">
@@ -54,16 +62,7 @@
     <!-- LCP-critical font: EB Garamond Greek subset (h1 "Διαλογισμός στη Ρόδο") -->
     <link rel="preload" as="font" type="font/woff2" href="fonts/eb-garamond-greek.woff2" crossorigin>
 
-    <!-- Fonts: EB Garamond is self-hosted (see style.css). Spectral + Inter from Google. -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap"
-          media="print"
-          onload="this.media='all'">
-    <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;1,300&family=Inter:wght@300;400&display=swap">
-    </noscript>
+    <!-- Fonts: all self-hosted via @font-face in style.css. No third-party CDNs. -->
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -324,6 +323,12 @@
         <p class="footer-sub">
             <span data-lang="el">Εκπαίδευση στη σχολή Amrita, Κρήτη.</span>
             <span data-lang="en">Trained at Amrita School, Crete.</span>
+        </p>
+        <p class="footer-sub">
+            <a href="/privacy" class="text-link">
+                <span data-lang="el">Πολιτική Απορρήτου & Στοιχεία Υπεύθυνου</span>
+                <span data-lang="en">Privacy Policy & Imprint</span>
+            </a>
         </p>
     </footer>
 
