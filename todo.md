@@ -64,6 +64,10 @@ uncommitted work.
   later once the `rua` reports show no legitimate senders are being missed.
 
 ## 🎯 P1: Operational (manual signups — Yorgos must do)
+- [ ] **Privacy-safe analytics for QR scans** — choose Plausible, GoatCounter,
+  or Cloudflare Web Analytics. Track `https://stillrhodes.com/qr/meditation/`
+  before redirecting to WhatsApp, then update `privacy.html` because it
+  currently says the site uses no analytics.
 - [ ] **UptimeRobot** — sign up at <https://uptimerobot.com> (free tier, 50
   monitors, 5-min interval). Add a HTTP(s) monitor for
   `https://stillrhodes.com/`. Alert email →
