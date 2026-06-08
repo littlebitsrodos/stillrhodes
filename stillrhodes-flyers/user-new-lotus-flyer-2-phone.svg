@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1800" viewBox="0 0 1800 1800">
+<rect width="1800" height="1800" fill="#eaf3f4"/>
+<rect x="647" y="280" width="506" height="710" rx="22" fill="#fff" opacity=".82"/>
+<g transform="translate(657 290) scale(3.28571429)">
+<g>
+  <defs>
+    <linearGradient id="shade2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#031013" stop-opacity="0.08"/><stop offset="0.46" stop-color="#031013" stop-opacity="0.12"/><stop offset="0.70" stop-color="#031013" stop-opacity="0.50"/><stop offset="1" stop-color="#031013" stop-opacity="0.92"/></linearGradient>
+    <radialGradient id="soft2" cx="50%" cy="35%" r="74%"><stop offset="0" stop-color="#d9f7ff" stop-opacity="0.06"/><stop offset="1" stop-color="#061316" stop-opacity="0.30"/></radialGradient>
+  </defs>
+  <rect width="148" height="210" fill="#0b242a"/>
+  <image href="assets/user-new-lotus-preview/new-lotus-2-portrait.jpeg" x="0" y="0" width="148" height="210" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="148" height="210" fill="url(#soft2)"/>
+  <rect width="148" height="210" fill="url(#shade2)"/>
+  <text x="9" y="13" font-family="Avenir Next, Helvetica, Arial" font-size="3.2" letter-spacing="1.1" fill="white" opacity="0.88">STILL RHODES · MEDITATION</text>
+  <text x="74" y="149" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">a quiet moment for</text>
+  <text x="74" y="162" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">your mind during</text>
+  <text x="74" y="175" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">your stay</text>
+  <circle cx="131" cy="18" r="8" fill="rgba(255,255,255,.86)"/><text x="131" y="21" text-anchor="middle" font-family="Avenir Next, Helvetica, Arial" font-size="8" font-weight="800" fill="#123840">2</text>
+  <text x="9" y="201" font-family="Avenir Next, Helvetica, Arial" font-size="3.5" fill="white" opacity="0.92">stillrhodes.com</text>
+  <text x="139" y="201" text-anchor="end" font-family="Avenir Next, Helvetica, Arial" font-size="3.5" fill="white" opacity="0.92">Rhodes · Faliraki · Old Town</text>
+</g>
+</g>
+<text x="900" y="1060" text-anchor="middle" font-family="Avenir Next, Helvetica, Arial" font-size="36" font-weight="800" fill="#123840">Option 2</text>
+<text x="900" y="1100" text-anchor="middle" font-family="Avenir Next, Helvetica, Arial" font-size="24" fill="#53605e">phone-safe full A5 preview</text>
+</svg>

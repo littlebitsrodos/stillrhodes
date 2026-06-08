@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Still Rhodes — Responsive A5 Concepts</title>
+<style>
+  @page { size: A5 portrait; margin: 0; }
+  :root{
+    --paper:#f8f3e7; --paper2:#fffaf1; --ink:#17272b; --muted:#607074;
+    --sea:#245d66; --deep:#123840; --sage:#788f68; --gold:#c6a24a; --sun:#dfbd63;
+    --curve:cubic-bezier(.32,.72,0,1); --r:2rem;
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:#d8d0c0;color:var(--ink);font-family:"Plus Jakarta Sans","Avenir Next",system-ui,sans-serif;}
+  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.75' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E")}
+  .studio{width:min(100%,1280px);margin:auto;padding:clamp(18px,4vw,56px);display:grid;gap:clamp(28px,5vw,72px)}
+  .meta{max-width:980px;margin:auto;text-align:center}.meta .eyebrow{display:inline-flex;border-radius:999px;padding:.48rem .8rem;background:#fff7;border:1px solid #fff8;font-size:.68rem;letter-spacing:.22em;text-transform:uppercase}.meta h1{font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif;font-size:clamp(2.2rem,7vw,6rem);line-height:.9;margin:1rem 0 .6rem;font-weight:400;letter-spacing:-.045em}.meta p{margin:auto;max-width:58ch;color:#43565b;line-height:1.55}
+  .page{width:min(92vw,420px);aspect-ratio:148/210;margin:auto;position:relative;overflow:hidden;border-radius:28px;background:var(--paper);box-shadow:0 40px 90px rgba(35,48,51,.22);isolation:isolate;break-after:page;transform:translateY(18px);opacity:0;animation:rise 900ms var(--curve) forwards}.page:nth-of-type(2){animation-delay:.12s}.page:nth-of-type(3){animation-delay:.24s}
+  @keyframes rise{to{transform:none;opacity:1}} .concept-name{position:absolute;left:6%;top:4%;z-index:4;border-radius:999px;padding:.35rem .58rem;background:#fff9;border:1px solid #fff8;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;color:#526164}.serif{font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif}.eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:800}.shell{padding:5px;border-radius:var(--r);background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.48)}.core{border-radius:calc(var(--r) - 5px);background:rgba(255,250,241,.86);box-shadow:inset 0 1px 1px rgba(255,255,255,.72)}.cta{display:inline-flex;align-items:center;gap:.58rem;border:0;border-radius:999px;padding:.42rem .44rem .42rem .82rem;background:var(--deep);color:#fff;text-decoration:none;font-size:.72rem;font-weight:800;letter-spacing:.02em;transition:transform 700ms var(--curve),background 700ms var(--curve)}.cta i{width:1.55rem;height:1.55rem;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.14);font-style:normal;transition:transform 700ms var(--curve)}.cta:hover{transform:translateY(-2px)}.cta:hover i{transform:translate(2px,-1px) scale(1.06)}
+
+  /* 01 Editorial Lotus */
+  .lotus-lux{background:radial-gradient(circle at 50% 24%,rgba(223,189,99,.72) 0 14%,transparent 36%),linear-gradient(180deg,#fff8ec 0%,#eadfbe 62%,#c8b46c 100%)}
+  .lotus-lux .orb{position:absolute;width:78%;aspect-ratio:1;border:1px solid rgba(36,93,102,.28);border-radius:50%;left:11%;top:9%;box-shadow:inset 0 0 0 18px rgba(255,255,255,.1)}
+  .lotus-lux .lotus{position:absolute;left:20%;top:15%;width:60%;height:auto;filter:drop-shadow(0 12px 18px rgba(18,56,64,.18))}.lotus-lux .sea{position:absolute;inset:auto -12% 0 -12%;height:34%;background:linear-gradient(140deg,var(--sea),var(--deep));clip-path:ellipse(72% 54% at 50% 100%)}.lotus-lux .sea:after{content:"";position:absolute;inset:24% 0 0;background:rgba(120,143,104,.72);clip-path:ellipse(62% 40% at 54% 100%)}
+  .lotus-lux .copy{position:absolute;left:7%;right:7%;top:48%;text-align:center}.lotus-lux h2{font-size:clamp(2.15rem,9vw,3.2rem);line-height:.82;margin:.55rem 0;font-weight:400;letter-spacing:-.05em}.lotus-lux .sub{color:var(--sea);font-size:.75rem;font-weight:900;letter-spacing:.16em;text-transform:uppercase}.lotus-lux .card{position:absolute;left:8%;right:8%;bottom:15%;font-size:.76rem;line-height:1.35}.lotus-lux .core{padding:1rem}.lotus-lux .offers{position:absolute;left:8%;right:8%;bottom:5.5%;display:grid;grid-template-columns:1fr 1fr;gap:.45rem}.lotus-lux .offer{background:#fff9;border-radius:1rem;padding:.62rem;font-size:.63rem}.lotus-lux .offer b{display:block;color:var(--sea);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase}.lotus-lux .foot{position:absolute;left:8%;right:8%;bottom:1.6%;display:flex;justify-content:space-between;align-items:center;color:white;font-size:.68rem}
+
+  /* 02 Cinematic Rhodes */
+  .postcard{background:#f8efe0}.postcard .sky{position:absolute;inset:0 0 34% 0;background:linear-gradient(180deg,#f1c56c,#dc8760 54%,#34787b 55%,#173e47)}.postcard .sun{position:absolute;right:10%;top:12%;width:30%;aspect-ratio:1;border-radius:50%;background:var(--sun);box-shadow:0 0 0 22px rgba(223,189,99,.14)}.postcard .land{position:absolute;left:-6%;right:-6%;top:35%;height:24%;background:#123840;clip-path:polygon(0 55%,15% 40%,29% 63%,42% 30%,56% 58%,72% 35%,88% 62%,100% 45%,100% 100%,0 100%)}.postcard h2{position:absolute;left:7%;top:13%;max-width:74%;color:#fff;font-size:clamp(2.2rem,9vw,3.6rem);line-height:.86;font-weight:400;letter-spacing:-.06em;text-shadow:0 9px 28px rgba(0,0,0,.28)}.postcard .badge{position:absolute;left:7%;top:39%;background:#fff7;border:1px solid #fff8;color:#143941;border-radius:999px;padding:.52rem .72rem;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;font-weight:900}.postcard .panel{position:absolute;left:6%;right:6%;bottom:12%;font-size:.77rem;line-height:1.37}.postcard .core{padding:1rem}.postcard .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:.38rem;margin-top:.7rem}.postcard .step{border-top:2px solid var(--gold);padding-top:.38rem;font-size:.58rem}.postcard .tiles{position:absolute;left:6%;right:6%;bottom:4.2%;display:grid;grid-template-columns:1fr 1fr;gap:.4rem}.postcard .tile{padding:.6rem;border-radius:1rem;background:#143941;color:white;font-size:.65rem}.postcard .tile b{color:var(--sun);letter-spacing:.12em;text-transform:uppercase;font-size:.55rem}.postcard footer{position:absolute;left:6%;right:6%;bottom:1.5%;display:flex;justify-content:space-between;font-size:.64rem;color:#143941}
+
+  /* 03 Minimal Zen */
+  .zen{background:#fffaf1}.zen:before{content:"";position:absolute;inset:6%;border:1px solid rgba(198,162,74,.45);border-radius:22px}.zen .enso{position:absolute;left:18%;top:9%;width:64%;aspect-ratio:1;border:2px solid var(--sea);border-radius:50%;box-shadow:inset 0 0 0 16px #fff4}.zen .enso:after{content:"";position:absolute;inset:16%;border:1px solid var(--gold);border-radius:50%}.zen .dot{position:absolute;left:50%;top:24%;width:10%;aspect-ratio:1;border-radius:50%;background:var(--gold);transform:translateX(-50%)}.zen .mark{position:absolute;left:28%;top:40%;width:44%;height:auto}.zen h2{position:absolute;top:54%;left:0;right:0;text-align:center;font-size:clamp(1.9rem,8vw,2.75rem);font-weight:400;letter-spacing:.12em}.zen .for{position:absolute;top:63.5%;left:0;right:0;text-align:center;color:var(--sea);font-size:.64rem;letter-spacing:.2em;text-transform:uppercase;font-weight:900}.zen .quote{position:absolute;top:70%;left:13%;right:13%;text-align:center;font-size:clamp(1.25rem,5vw,1.7rem);line-height:1.12}.zen .text{position:absolute;top:82%;left:14%;right:14%;text-align:center;font-size:.72rem;line-height:1.35;color:#4a5d61}.zen .chips{position:absolute;left:9%;right:9%;bottom:6.5%;display:flex;gap:.35rem;justify-content:center;flex-wrap:wrap}.zen .chips span{border:1px solid var(--sea);color:var(--sea);border-radius:999px;padding:.38rem .48rem;font-size:.55rem;font-weight:800}.zen footer{position:absolute;left:9%;right:9%;bottom:1.8%;display:flex;justify-content:space-between;align-items:center;font-size:.64rem}
+
+  @media (min-width:980px){.concept-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:start}.page{width:min(30vw,360px)}}
+  @media (max-width:520px){.studio{padding:16px 0 28px}.meta{padding:0 18px}.page{width:94vw;border-radius:20px}.concept-name{font-size:.5rem}.lotus-lux .offers{gap:.32rem}.postcard .steps{grid-template-columns:1fr;gap:.2rem}.zen .chips span{font-size:.5rem}.cta{font-size:.62rem}}
+  @media print{body{background:white}.studio{display:block;padding:0}.meta{display:none}.concept-grid{display:block}.page{width:148mm;height:210mm;aspect-ratio:auto;border-radius:0;box-shadow:none;margin:0;page-break-after:always;animation:none;opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<main class="studio">
+  <header class="meta">
+    <span class="eyebrow">Still Rhodes · A5 flyer directions</span>
+    <h1>Three refined concepts</h1>
+    <p>Responsive browser preview for mobile review. Each concept keeps the visitor-first message, earthy Rhodes palette, and a distinct premium visual language.</p>
+  </header>
+
+  <div class="concept-grid">
+    <section class="page lotus-lux">
+      <div class="concept-name">01 · Editorial Lotus</div>
+      <div class="orb"></div>
+      <svg class="lotus" viewBox="0 0 160 120" aria-hidden="true">
+        <path d="M80 5C99 31 98 60 80 87C62 60 61 31 80 5Z" fill="#fff8ec" stroke="#245d66" stroke-width="2"/>
+        <path d="M69 42C35 45 14 65 11 103C47 98 68 78 80 87C75 67 69 57 69 42Z" fill="#dfbd63" stroke="#245d66" stroke-width="1.8"/>
+        <path d="M91 42C125 45 146 65 149 103C113 98 92 78 80 87C85 67 91 57 91 42Z" fill="#dfbd63" stroke="#245d66" stroke-width="1.8"/>
+        <path d="M76 52C51 66 42 91 52 116C70 107 82 96 80 87C74 72 73 61 76 52Z" fill="#fffaf1" stroke="#123840" stroke-width="1.5"/>
+        <path d="M84 52C109 66 118 91 108 116C90 107 78 96 80 87C86 72 87 61 84 52Z" fill="#fffaf1" stroke="#123840" stroke-width="1.5"/>
+        <path d="M8 112C48 126 112 126 152 112" fill="none" stroke="#245d66" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="sea"></div>
+      <div class="copy">
+        <div class="sub">Meditation in Rhodes</div>
+        <h2 class="serif">a quiet moment for your mind during your stay</h2>
+      </div>
+      <div class="shell card"><div class="core">A technique to learn how to focus your attention, calm your mind and discover who you are. For beginners, advanced and experienced meditators.</div></div>
+      <div class="offers"><div class="offer"><b>Group</b>60 min · €10</div><div class="offer"><b>Private</b>Upon arrangement</div></div>
+      <footer><span>stillrhodes.com</span><a class="cta" href="https://stillrhodes.com">Book <i>↗</i></a></footer>
+    </section>
+
+    <section class="page postcard">
+      <div class="concept-name">02 · Rhodes Postcard</div>
+      <div class="sky"><div class="sun"></div></div><div class="land"></div>
+      <h2 class="serif">Find stillness in Rhodes</h2>
+      <div class="badge">For visitors · 60 min · €10</div>
+      <div class="shell panel"><div class="core">
+        A technique to learn how to focus your attention, calm your mind and discover who you are. For beginners, advanced and experienced meditators.
+        <div class="steps"><div class="step"><b>01</b><br>Book on WhatsApp</div><div class="step"><b>02</b><br>Meet in Rhodes/Faliraki</div><div class="step"><b>03</b><br>Learn to focus</div></div>
+      </div></div>
+      <div class="tiles"><div class="tile"><b>Group</b><br>60 minutes · €10</div><div class="tile"><b>Private</b><br>Tailored to your pace</div></div>
+      <footer><span>Still Rhodes</span><span>stillrhodes.com</span></footer>
+    </section>
+
+    <section class="page zen">
+      <div class="concept-name">03 · Minimal Zen</div>
+      <div class="enso"></div><div class="dot"></div>
+      <svg class="mark" viewBox="0 0 180 60" aria-hidden="true">
+        <path d="M90 5C102 22 102 38 90 53C78 38 78 22 90 5Z" fill="none" stroke="#245d66" stroke-width="3"/>
+        <path d="M86 28C58 27 37 38 26 55C55 57 76 50 90 53" fill="none" stroke="#c6a24a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M94 28C122 27 143 38 154 55C125 57 104 50 90 53" fill="none" stroke="#c6a24a" stroke-width="3" stroke-linecap="round"/>
+        <path d="M18 56C55 64 125 64 162 56" fill="none" stroke="#245d66" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <h2 class="serif">STILL RHODES</h2>
+      <div class="for">Meditation for travellers</div>
+      <div class="quote serif">“Silence is the language of everything.”</div>
+      <div class="text">A technique to focus your attention, calm your mind and discover who you are. For beginners, advanced and experienced meditators.</div>
+      <div class="chips"><span>Group €10</span><span>Private</span><span>WhatsApp</span></div>
+      <footer><span>stillrhodes.com</span><a class="cta" href="https://stillrhodes.com">Book <i>↗</i></a></footer>
+    </section>
+  </div>
+</main>
+</body>
+</html>

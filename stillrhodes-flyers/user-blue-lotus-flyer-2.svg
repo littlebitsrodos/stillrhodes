@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="148mm" height="210mm" viewBox="0 0 148 210">
+  <defs>
+    <linearGradient id="shade" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#031013" stop-opacity="0.10"/><stop offset="0.48" stop-color="#031013" stop-opacity="0.14"/><stop offset="0.72" stop-color="#031013" stop-opacity="0.48"/><stop offset="1" stop-color="#031013" stop-opacity="0.90"/></linearGradient>
+    <radialGradient id="soft" cx="50%" cy="34%" r="72%"><stop offset="0" stop-color="#d9f7ff" stop-opacity="0.10"/><stop offset="1" stop-color="#061316" stop-opacity="0.36"/></radialGradient>
+  </defs>
+  <rect width="148" height="210" fill="#0b242a"/>
+  <image href="assets/user-blue-lotus/blue-lotus-user-2.jpeg" x="-83" y="0" width="315" height="210" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="148" height="210" fill="url(#soft)"/>
+  <rect width="148" height="210" fill="url(#shade)"/>
+  <text x="9" y="13" font-family="Avenir Next, Helvetica, Arial" font-size="3.2" letter-spacing="1.1" fill="white" opacity="0.88">STILL RHODES · MEDITATION</text>
+  <text x="74" y="149" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">a quiet moment for</text>
+  <text x="74" y="162" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">your mind during</text>
+  <text x="74" y="175" text-anchor="middle" font-family="Georgia, Times, serif" font-size="11.2" fill="white">your stay</text>
+  <circle cx="131" cy="18" r="8" fill="rgba(255,255,255,.86)"/><text x="131" y="21" text-anchor="middle" font-family="Avenir Next, Helvetica, Arial" font-size="8" font-weight="800" fill="#123840">2</text>
+  <text x="9" y="201" font-family="Avenir Next, Helvetica, Arial" font-size="3.5" fill="white" opacity="0.92">stillrhodes.com</text>
+  <text x="139" y="201" text-anchor="end" font-family="Avenir Next, Helvetica, Arial" font-size="3.5" fill="white" opacity="0.92">Rhodes · Faliraki · Old Town</text>
+</svg>

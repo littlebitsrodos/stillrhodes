@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1400" viewBox="0 0 1800 1400">
+  <rect width="1800" height="1400" fill="#eaf3f4"/>
+  <text x="70" y="74" font-family="Avenir Next, Helvetica, Arial" font-size="38" font-weight="700" fill="#123840">Blue / light-blue lotus options</text>
+  <text x="70" y="116" font-family="Avenir Next, Helvetica, Arial" font-size="24" fill="#53605e">All originals are high-resolution enough for A5 print. Choose by number.</text>
+  <g font-family="Avenir Next, Helvetica, Arial" fill="#123840">
+    <g transform="translate(70 170)">
+      <image href="https://upload.wikimedia.org/wikipedia/commons/2/25/Egyptian_lotus_%28Nymphaea_nouchali_var_caerulea%29_flower.jpg" x="0" y="0" width="760" height="470" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="0" y="0" width="760" height="470" fill="none" stroke="#fff" stroke-width="8"/>
+      <text x="0" y="522" font-size="30" font-weight="700">1. Egyptian blue lotus</text>
+      <text x="0" y="560" font-size="22" fill="#53605e">5500×4160 · Public domain · safest license</text>
+    </g>
+    <g transform="translate(970 170)">
+      <image href="https://upload.wikimedia.org/wikipedia/commons/8/83/%28MHNT%29_Nymphaea_nouchali_var._caerulea_-_Les_Martels%2C_Giroussens_Tarn.jpg" x="0" y="0" width="760" height="470" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="0" y="0" width="760" height="470" fill="none" stroke="#fff" stroke-width="8"/>
+      <text x="0" y="522" font-size="30" font-weight="700">2. Premium natural blue lily</text>
+      <text x="0" y="560" font-size="22" fill="#53605e">7309×5081 · CC BY-SA 4.0</text>
+    </g>
+    <g transform="translate(70 790)">
+      <image href="https://upload.wikimedia.org/wikipedia/commons/f/f1/Blue_lotus_flower.jpg" x="0" y="0" width="760" height="470" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="0" y="0" width="760" height="470" fill="none" stroke="#fff" stroke-width="8"/>
+      <text x="0" y="522" font-size="30" font-weight="700">3. Blue flower hero</text>
+      <text x="0" y="560" font-size="22" fill="#53605e">5162×3352 · CC BY-SA 4.0</text>
+    </g>
+    <g transform="translate(970 790)">
+      <image href="https://upload.wikimedia.org/wikipedia/commons/3/37/Nymphaea_nouchali_var._caerulea_1DS-II_1-C4131.jpg" x="0" y="0" width="760" height="470" preserveAspectRatio="xMidYMid slice"/>
+      <rect x="0" y="0" width="760" height="470" fill="none" stroke="#fff" stroke-width="8"/>
+      <text x="0" y="522" font-size="30" font-weight="700">4. Soft pale-blue close-up</text>
+      <text x="0" y="560" font-size="22" fill="#53605e">4992×3328 · CC BY-SA 4.0</text>
+    </g>
+  </g>
+</svg>

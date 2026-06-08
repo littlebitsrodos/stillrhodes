@@ -1,0 +1,9 @@
+# macOS
+.DS_Store
+
+# Local preview/package artifacts
+*.zip
+.chrome-pdf-profile/
+
+# Dependencies/build caches
+node_modules/

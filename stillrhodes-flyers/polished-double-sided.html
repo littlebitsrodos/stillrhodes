@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Still Rhodes — Double-sided A5 Print Direction</title>
+<style>
+  @page { size: A5 portrait; margin: 0; }
+  :root{
+    --paper:#fbf6ea; --ink:#142f35; --deep:#123840; --sea:#2e7276;
+    --gold:#c8a44d; --sun:#e5bd5b; --cream:#fffdf7;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#d7d0c0;color:var(--ink);font-family:"Plus Jakarta Sans","Avenir Next",system-ui,sans-serif}
+  .stage{min-height:100dvh;display:grid;gap:28px;place-items:center;padding:clamp(14px,4vw,46px)}
+  .page{width:min(94vw,430px);aspect-ratio:148/210;position:relative;overflow:hidden;border-radius:30px;background:var(--paper);box-shadow:0 42px 100px rgba(20,47,53,.24);isolation:isolate;break-after:page}
+  .page:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+
+  /* FRONT — lotus image */
+  .front-lotus{background:#0b242a;color:white}
+  .front-lotus .photo{position:absolute;inset:-3mm;background:url('assets/user-blue-lotus/blue-lotus-user-1.jpeg') center center/cover no-repeat;filter:saturate(.98) contrast(1.06)}
+  .front-lotus .shade{position:absolute;inset:0;background:radial-gradient(circle at 50% 34%,rgba(217,247,255,.10) 0 30%,rgba(6,19,22,.36) 100%),linear-gradient(180deg,rgba(3,16,19,.10),rgba(3,16,19,.14) 48%,rgba(3,16,19,.48) 72%,rgba(3,16,19,.90))}
+  .front-lotus .mark{position:absolute;top:7mm;left:9mm;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.84);text-shadow:0 5px 18px rgba(0,0,0,.45)}
+  .front-lotus .quote{position:absolute;left:11mm;right:11mm;bottom:18mm;text-align:center;font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(1.75rem,7.6vw,2.75rem);line-height:1.02;letter-spacing:-.045em;text-shadow:0 8px 28px rgba(0,0,0,.55)}
+  .front-lotus .front-footer{position:absolute;left:9mm;right:9mm;bottom:7mm;display:flex;justify-content:space-between;align-items:center;font-size:.68rem;color:rgba(255,255,255,.86);text-shadow:0 5px 18px rgba(0,0,0,.55)}
+
+  /* BACK — booking first */
+  .booking-back{background:linear-gradient(180deg,#fff9ed 0%,#f1e4c9 100%)}
+  .booking-back .sunwash{position:absolute;inset:-8%;background:radial-gradient(circle at 78% 18%,rgba(229,189,91,.62) 0 11%,rgba(229,189,91,.18) 28%,transparent 52%)}
+  .booking-back .land{position:absolute;left:-8%;right:-8%;bottom:-2%;height:28%;background:linear-gradient(160deg,var(--sea),var(--deep));clip-path:ellipse(72% 55% at 50% 100%)}
+  .safe{position:absolute;inset:8mm;z-index:2}
+  .eyebrow{display:inline-flex;border-radius:999px;padding:.42rem .68rem;background:rgba(255,255,255,.64);border:1px solid rgba(255,255,255,.72);font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:var(--sea)}
+  .booking-back h1{font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(2.35rem,10.8vw,3.8rem);line-height:.88;letter-spacing:-.065em;margin:8mm 0 3mm;color:var(--deep)}
+  .subline{font-size:.9rem;line-height:1.3;color:#385056;max-width:30ch;margin:0 0 4mm}
+  .copy-card{padding:1mm 0 0;border-top:2px solid rgba(200,164,77,.75);max-width:95%}
+  .copy-card p{margin:2mm 0 0;font-size:.76rem;line-height:1.34;color:#354a4f}
+  .offer-row{display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-top:2mm}
+  .offer{min-height:21mm;background:rgba(255,253,247,.78);border-radius:4mm;padding:3mm;box-shadow:inset 0 1px 1px rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.7);overflow:visible}
+  .offer b{display:block;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sea);margin-bottom:1.4mm}.offer span{font-size:.72rem;line-height:1.18;color:var(--ink)}
+  .qr-card{position:absolute;left:8mm;right:8mm;bottom:15mm;z-index:3;display:grid;grid-template-columns:1fr 28mm;gap:4mm;align-items:center;padding:4mm;border-radius:7mm;background:var(--deep);color:white;box-shadow:0 18px 50px rgba(18,56,64,.26),inset 0 1px 1px rgba(255,255,255,.14)}
+  .qr-card h2{margin:0 0 1.5mm;font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:var(--sun)}
+  .qr-card p{margin:0;font-size:.78rem;line-height:1.2}.qr-card small{display:none}
+  .qr{width:28mm;height:28mm;border-radius:3.5mm;background:#fff;display:grid;place-items:center;padding:1.8mm}.qr img{width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+  .site{position:absolute;left:8mm;right:8mm;bottom:3.5mm;z-index:4;display:flex;justify-content:space-between;align-items:flex-end;color:#fff;font-size:.62rem;letter-spacing:.04em}.site-left{display:flex;align-items:center;gap:2.5mm}.yai-mark{display:flex;align-items:center;gap:1.6mm;color:#fff}.yai-logo{width:12mm;height:12mm;border-radius:50%;object-fit:cover;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,.18)}.yai-text{font-size:.48rem;line-height:1.05;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.82)}
+  .print-note{max-width:430px;margin:0 auto;color:#53605e;font-size:.85rem;text-align:center;line-height:1.45}.print-note code{background:#fff8;padding:.15rem .32rem;border-radius:.35rem}
+
+  @media (max-width:420px){.stage{padding:8px}.page{width:96vw;border-radius:22px}.offer-row{gap:2.5mm}.offer{padding:3mm}.qr-card{grid-template-columns:1fr 30mm}.qr{width:30mm;height:30mm}.booking-back h1{margin-top:8mm}.subline{font-size:.82rem}.copy-card p{font-size:.72rem}}
+  @media print{body{background:white}.stage{display:block;padding:0}.page{width:148mm;height:210mm;aspect-ratio:auto;border-radius:0;box-shadow:none;margin:0}.print-note{display:none}.front-lotus .photo{inset:-3mm}}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="page front-lotus" aria-label="Still Rhodes flyer front — lotus image">
+    <div class="photo"></div><div class="shade"></div>
+    <div class="mark">Still Rhodes · Meditation</div>
+    <div class="quote">a quiet moment for your mind during your stay</div>
+    <div class="front-footer"><span>stillrhodes.com</span><span>Rhodes · Faliraki · Old Town</span></div>
+  </section>
+
+  <section class="page booking-back" aria-label="Still Rhodes flyer back — booking information">
+    <div class="sunwash"></div><div class="land"></div>
+    <div class="safe">
+      <span class="eyebrow">Book your session</span>
+      <h1>Meditation<br>in Rhodes</h1>
+      <p class="subline">A quiet one-hour experience during your stay.</p>
+      <div class="copy-card">
+        <p>A simple guided technique to focus your attention, calm your mind, and discover who you are.</p>
+      </div>
+      <div class="offer-row">
+        <div class="offer"><b>Group session</b><span>60 minutes<br>€10 · Rhodes / Faliraki</span></div>
+        <div class="offer"><b>Private session</b><span>Upon arrangement</span></div>
+      </div>
+    </div>
+    <div class="qr-card">
+      <div>
+        <h2>Book on WhatsApp</h2>
+        <p>Scan to message Giorgos and reserve your meditation session.</p>
+      </div>
+      <div class="qr"><img src="assets/whatsapp-qr.png" alt="Trackable QR for Still Rhodes WhatsApp booking" /></div>
+    </div>
+    <div class="site"><div class="site-left"><span>stillrhodes.com</span><div class="yai-mark" aria-label="Yoga Alliance International certification"><img class="yai-logo" src="assets/yoga-alliance-international-certification.jpeg" alt="Yoga Alliance International Certification logo"><span class="yai-text">Yoga Alliance<br>International</span></div></div><span>+30 694 613 8241</span></div>
+  </section>
+
+  <p class="print-note">Print direction: A5 front/back. Keep all important content inside the 8mm safe area. Front lotus photo is <code>1213×832px</code>; acceptable for review, but below ideal A5 300dpi full-bleed resolution.</p>
+</main>
+</body>
+</html>

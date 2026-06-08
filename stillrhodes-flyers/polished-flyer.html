@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Still Rhodes — Polished A5 Flyer</title>
+<style>
+  @page { size: A5 portrait; margin: 0; }
+  :root{
+    --paper:#fbf6ea; --paper2:#fffdf7; --ink:#142f35; --muted:#5d6c69;
+    --deep:#123840; --sea:#2e7276; --sage:#748c67; --gold:#c8a44d; --sun:#e5bd5b; --terracotta:#c9785e;
+    --curve:cubic-bezier(.32,.72,0,1);
+  }
+  *{box-sizing:border-box} html{scroll-behavior:smooth}
+  body{margin:0;background:#d7d0c0;color:var(--ink);font-family:"Plus Jakarta Sans","Avenir Next",system-ui,sans-serif;}
+  body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E")}
+  .stage{min-height:100dvh;display:grid;place-items:center;padding:clamp(14px,4vw,46px)}
+  .page{width:min(94vw,430px);aspect-ratio:148/210;position:relative;overflow:hidden;border-radius:30px;background:var(--paper);box-shadow:0 42px 100px rgba(20,47,53,.24);isolation:isolate;animation:rise 900ms var(--curve) both}
+  @keyframes rise{from{opacity:0;transform:translateY(18px) scale(.985)}to{opacity:1;transform:none}}
+  .sky{position:absolute;inset:0 0 38% 0;background:linear-gradient(180deg,#f2c76f 0%,#d88663 46%,#438386 47%,#143f48 100%)}
+  .sky:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 76% 25%,rgba(255,232,150,.42) 0 9%,transparent 24%),linear-gradient(180deg,rgba(255,255,255,.18),transparent 42%)}
+  .sun{position:absolute;right:9%;top:11%;width:31%;aspect-ratio:1;border-radius:50%;background:var(--sun);box-shadow:0 0 0 20px rgba(229,189,91,.16),0 0 60px rgba(229,189,91,.34)}
+  .island{position:absolute;left:-7%;right:-7%;top:34%;height:27%;background:linear-gradient(180deg,#123840,#09262c);clip-path:polygon(0 58%,13% 46%,26% 63%,40% 31%,55% 59%,71% 37%,86% 60%,100% 44%,100% 100%,0 100%)}
+  .sea-line{position:absolute;left:0;right:0;top:54%;height:8%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.38),transparent);opacity:.55;transform:skewY(-3deg)}
+  .label{position:absolute;top:4.8%;left:6.5%;z-index:2;border-radius:999px;padding:.45rem .7rem;background:rgba(255,253,247,.72);border:1px solid rgba(255,255,255,.68);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;font-weight:850;color:#183d45;box-shadow:0 12px 30px rgba(18,56,64,.10)}
+  .hero{position:absolute;left:6.5%;right:8%;top:13%;z-index:2;color:white;text-shadow:0 10px 30px rgba(0,0,0,.32)}
+  .hero h1{font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(2.55rem,12vw,4.2rem);line-height:.83;letter-spacing:-.065em;margin:0}.hero p{margin:.9rem 0 0;max-width:26ch;font-size:.82rem;line-height:1.35;color:rgba(255,255,255,.92)}
+  .panel-shell{position:absolute;left:6%;right:6%;bottom:17%;padding:5px;border-radius:2rem;background:rgba(255,255,255,.22);border:1px solid rgba(255,255,255,.55);box-shadow:0 24px 65px rgba(18,56,64,.18)}
+  .panel{border-radius:calc(2rem - 5px);background:rgba(255,253,247,.94);box-shadow:inset 0 1px 1px rgba(255,255,255,.8);padding:1rem 1rem .9rem}.panel h2{font-family:"PP Editorial New","Cormorant Garamond",Georgia,serif;font-weight:400;font-size:clamp(1.3rem,5.6vw,1.9rem);line-height:1.02;letter-spacing:-.035em;margin:0 0 .55rem}.panel p{font-size:.77rem;line-height:1.43;color:#33494e;margin:0}.proof{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.36rem;margin-top:.72rem}.proof div{border-top:2px solid var(--gold);padding-top:.38rem;font-size:.58rem;color:#4a5a5e}.proof b{display:block;color:var(--ink);font-size:.68rem;margin-bottom:.1rem}
+  .booking{position:absolute;left:6%;right:6%;bottom:5.2%;display:grid;grid-template-columns:1fr 1fr 58px;gap:.45rem;align-items:stretch}.tile{border-radius:1.12rem;background:var(--deep);color:white;padding:.68rem .7rem;box-shadow:inset 0 1px 1px rgba(255,255,255,.14)}.tile b{display:block;color:var(--sun);font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.28rem}.tile span{font-size:.7rem;line-height:1.2}.qr{border-radius:1rem;background:#fff;display:grid;place-items:center;padding:.34rem;box-shadow:inset 0 0 0 1px rgba(20,47,53,.08)}.qr svg{width:100%;height:100%}.footer{position:absolute;left:6%;right:6%;bottom:1.45%;display:flex;justify-content:space-between;align-items:center;font-size:.66rem;color:var(--deep)}.cta{display:inline-flex;align-items:center;gap:.42rem;border-radius:999px;padding:.36rem .38rem .36rem .7rem;background:var(--deep);color:white;text-decoration:none;font-weight:850;transition:transform 700ms var(--curve),background 700ms var(--curve)}.cta i{font-style:normal;display:grid;place-items:center;width:1.35rem;height:1.35rem;border-radius:50%;background:rgba(255,255,255,.14);transition:transform 700ms var(--curve)}.cta:hover{transform:translateY(-2px);background:#0d2d34}.cta:hover i{transform:translate(2px,-1px) scale(1.06)}
+  .note{max-width:430px;margin:14px auto 0;color:#53605e;font-size:.85rem;text-align:center;line-height:1.45}.note code{background:#fff8;padding:.15rem .32rem;border-radius:.35rem}
+  @media (max-width:420px){.stage{padding:8px}.page{width:96vw;border-radius:22px}.panel p{font-size:.72rem}.proof{gap:.25rem}.proof div{font-size:.52rem}.booking{grid-template-columns:1fr 1fr 52px}.tile{padding:.58rem}.tile span{font-size:.62rem}.footer{font-size:.58rem}.hero p{font-size:.74rem}}
+  @media print{body{background:white}.stage{display:block;padding:0}.page{width:148mm;height:210mm;aspect-ratio:auto;border-radius:0;box-shadow:none;animation:none}.note{display:none}}
+</style>
+</head>
+<body>
+<main class="stage">
+  <section class="page" aria-label="Still Rhodes polished A5 flyer">
+    <div class="sky"><div class="sun"></div></div>
+    <div class="island"></div><div class="sea-line"></div>
+    <div class="label">Still Rhodes · Meditation</div>
+    <div class="hero">
+      <h1>Find stillness<br>in Rhodes</h1>
+      <p>a quiet moment for your mind during your stay</p>
+    </div>
+    <div class="panel-shell"><div class="panel">
+      <h2>A simple technique to focus your attention, calm your mind, and discover who you are.</h2>
+      <p>Guided by Giorgos in Rhodes or Faliraki. Suitable for beginners, advanced practitioners, and experienced meditators.</p>
+      <div class="proof">
+        <div><b>01</b>Book on WhatsApp</div>
+        <div><b>02</b>Meet by the sea or Old Town</div>
+        <div><b>03</b>Learn to focus</div>
+      </div>
+    </div></div>
+    <div class="booking">
+      <div class="tile"><b>Group session</b><span>60 minutes · €10</span></div>
+      <div class="tile"><b>Private session</b><span>Upon arrangement</span></div>
+      <div class="qr" aria-label="QR placeholder">
+        <svg viewBox="0 0 29 29" role="img"><rect width="29" height="29" fill="#fff"/><path fill="#123840" d="M2 2h8v8H2zM4 4v4h4V4zM19 2h8v8h-8zM21 4v4h4V4zM2 19h8v8H2zM4 21v4h4v-4zM13 3h2v2h-2zM16 4h1v3h-1zM12 8h5v2h-5zM19 12h2v2h-2zM23 12h4v2h-4zM12 13h3v3h-3zM16 16h2v2h-2zM20 16h7v2h-7zM12 20h2v7h-2zM15 20h4v2h-4zM21 20h2v2h-2zM24 22h3v5h-3zM16 24h5v3h-5z"/></svg>
+      </div>
+    </div>
+    <div class="footer"><span>stillrhodes.com</span><a class="cta" href="https://stillrhodes.com">Book on WhatsApp <i>↗</i></a></div>
+  </section>
+  <p class="note">Polished direction. QR is a visual placeholder until we add the final WhatsApp/booking link.</p>
+</main>
+</body>
+</html>
