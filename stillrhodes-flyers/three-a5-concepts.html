@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Still Rhodes — 3 A5 Flyer Concepts</title>
+<style>
+  @page { size: A5; margin: 0; }
+  :root{
+    --cream:#faf8f5; --ink:#25343a; --sea:#2f6f73; --deep:#1f4b55;
+    --sage:#6f8b68; --gold:#c8a94c; --sand:#e9dfc4; --rose:#a67f6f;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#cfcfcf;font-family:Inter,Arial,sans-serif;color:var(--ink)}
+  .wrap{display:flex;flex-direction:column;gap:24px;align-items:center;padding:24px 0}
+  .page{width:148mm;height:210mm;position:relative;overflow:hidden;background:var(--cream);box-shadow:0 10px 30px #0004;page-break-after:always}
+  h1,h2,h3,p{margin:0}.serif{font-family:"EB Garamond",Georgia,serif}.smallcaps{letter-spacing:.14em;text-transform:uppercase}
+  .label{position:absolute;top:6mm;left:7mm;font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:#0008;z-index:20}
+  .cta{display:inline-block;border-radius:999px;padding:8px 14px;font-weight:700;letter-spacing:.03em}
+
+  /* Concept 1 — Premium calm / lotus */
+  .c1{background:linear-gradient(180deg,#f7f1df 0%,#e9dfc4 54%,#d8c487 100%)}
+  .c1:before{content:"";position:absolute;inset:-20mm;background:radial-gradient(circle at 50% 35%,#d6b85faa 0 16%,#d6b85f22 34%,transparent 58%)}
+  .c1 .wave1,.c1 .wave2,.c1 .wave3{position:absolute;left:-5%;width:110%;height:58mm;border-radius:50% 50% 0 0/35% 35% 0 0;bottom:-12mm}
+  .c1 .wave1{background:#2f6f73;bottom:30mm;transform:rotate(-4deg);opacity:.86}.c1 .wave2{background:#254c55;bottom:18mm;transform:rotate(3deg)}.c1 .wave3{background:#6f8b68;bottom:2mm;opacity:.78;transform:rotate(-2deg)}
+  .lotus{position:absolute;top:29mm;left:50%;transform:translateX(-50%);width:72mm;height:60mm;filter:drop-shadow(0 3px 5px #254c5538)}
+  .c1 .title{position:absolute;top:96mm;width:100%;text-align:center}.c1 h1{font-size:42px;letter-spacing:.08em;font-weight:400}.c1 .subtitle{margin-top:7px;color:var(--sea);font-size:15px;font-weight:800;letter-spacing:.13em}.c1 .tag{font-size:14px;margin-top:9px}.c1 .card{position:absolute;left:14mm;right:14mm;top:130mm;background:#faf8f5d9;border-radius:12px;padding:12px 15px}.c1 .card h2{font-size:25px;font-weight:400;margin-bottom:8px}.c1 .card p{font-size:14px;line-height:1.35}.c1 .sessions{position:absolute;left:14mm;right:14mm;bottom:14mm;display:grid;grid-template-columns:1fr 1fr;gap:7mm}.c1 .box{background:#faf8f5e8;border-radius:10px;padding:9px}.c1 .box b{color:var(--sea);font-size:12px;letter-spacing:.09em}.c1 .price{float:right;font-family:Georgia,serif;color:var(--gold);font-size:23px}.c1 footer{position:absolute;left:14mm;right:14mm;bottom:5mm;color:white;display:flex;justify-content:space-between;font-size:13px}
+
+  /* Concept 2 — Tourist postcard / sea route */
+  .c2{background:#f5efe2;color:#17363d}.c2 .photo{position:absolute;inset:0 0 69mm 0;background:linear-gradient(180deg,#f7cb75 0%,#e49b64 42%,#4f8b89 43%,#23525b 100%)}
+  .c2 .sun{position:absolute;width:44mm;height:44mm;border-radius:50%;background:#e8c45c;top:23mm;right:18mm;box-shadow:0 0 0 12mm #e8c45c22}.c2 .island{position:absolute;left:-10mm;right:-10mm;bottom:64mm;height:42mm;background:#17363d;clip-path:polygon(0 62%,15% 55%,30% 68%,45% 47%,64% 63%,81% 43%,100% 57%,100% 100%,0 100%)}
+  .c2 .route{position:absolute;left:12mm;right:12mm;top:124mm;background:#fffdf8;border:1px solid #d7c898;border-radius:4px;padding:12px 13px 14px}.c2 h1{position:absolute;top:22mm;left:13mm;color:white;font-size:46px;line-height:.9;text-shadow:0 3px 8px #0007}.c2 .badge{position:absolute;top:82mm;left:13mm;background:#f7f1df;color:#17363d;border-radius:999px;padding:8px 14px;font-size:12px;font-weight:800}.c2 .route h2{font-size:26px;line-height:1.05;margin-bottom:7px}.c2 .route p{font-size:14px;line-height:1.36}.c2 .steps{display:grid;grid-template-columns:1fr 1fr 1fr;gap:5px;margin-top:12px}.c2 .step{border-top:3px solid var(--gold);padding-top:7px;font-size:12px}.c2 .bottom{position:absolute;left:12mm;right:12mm;bottom:11mm;display:grid;grid-template-columns:1fr 1fr;gap:8px}.c2 .bottom div{background:#17363d;color:white;padding:12px;border-radius:4px}.c2 .bottom b{color:#e8c45c}.c2 footer{position:absolute;left:12mm;right:12mm;bottom:4mm;display:flex;justify-content:space-between;font-size:12px;color:#17363d}
+
+  /* Concept 3 — Minimal zen / premium retreat */
+  .c3{background:#fbfaf6;color:#1d292d}.c3:before{content:"";position:absolute;inset:10mm;border:1px solid #c8a94c88}.c3 .circle{position:absolute;top:26mm;left:50%;width:74mm;height:74mm;border:2px solid #2f6f73;border-radius:50%;transform:translateX(-50%)}.c3 .circle:after{content:"";position:absolute;inset:11mm;border:1px solid #c8a94c;border-radius:50%}.c3 .dot{position:absolute;top:57mm;left:50%;width:10mm;height:10mm;margin-left:-5mm;background:#c8a94c;border-radius:50%}.c3 .zenlotus{position:absolute;top:82mm;left:50%;transform:translateX(-50%);width:56mm;height:19mm}.c3 h1{position:absolute;top:112mm;left:0;right:0;text-align:center;font-size:34px;letter-spacing:.18em;font-weight:400}.c3 .mini{position:absolute;top:128mm;left:0;right:0;text-align:center;color:#2f6f73;font-size:12px;font-weight:800}.c3 .quote{position:absolute;top:144mm;left:24mm;right:24mm;text-align:center;font-size:22px;line-height:1.18;color:#1d292d}.c3 .copy{position:absolute;top:165mm;left:24mm;right:24mm;text-align:center;font-size:13px;line-height:1.45}.c3 .bar{position:absolute;left:18mm;right:18mm;bottom:23mm;display:flex;justify-content:center;gap:8px}.c3 .bar span{border:1px solid #2f6f73;color:#2f6f73;border-radius:999px;padding:7px 9px;font-size:11px;font-weight:700}.c3 footer{position:absolute;left:18mm;right:18mm;bottom:9mm;border-top:1px solid #c8a94c;padding-top:7px;display:flex;justify-content:space-between;font-size:12px}.c3 .cta{background:#2f6f73;color:white;padding:7px 12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <section class="page c1">
+    <div class="label">Concept 1 · Premium Lotus</div>
+    <svg class="lotus" viewBox="0 0 120 100" aria-hidden="true">
+      <path d="M60 4C74 27 73 50 60 69C47 50 46 27 60 4Z" fill="#f7f1df" stroke="#2f6f73" stroke-width="1.8"/>
+      <path d="M51 34C25 37 9 54 7 82C34 78 50 63 60 69C56 54 51 45 51 34Z" fill="#e4c75f" stroke="#2f6f73" stroke-width="1.5"/>
+      <path d="M69 34C95 37 111 54 113 82C86 78 70 63 60 69C64 54 69 45 69 34Z" fill="#e4c75f" stroke="#2f6f73" stroke-width="1.5"/>
+      <path d="M57 42C38 54 31 73 39 94C52 87 61 78 60 69C56 58 55 49 57 42Z" fill="#f2e8c8" stroke="#254c55" stroke-width="1.4"/>
+      <path d="M63 42C82 54 89 73 81 94C68 87 59 78 60 69C64 58 65 49 63 42Z" fill="#f2e8c8" stroke="#254c55" stroke-width="1.4"/>
+      <path d="M5 91C34 105 86 105 115 91" fill="none" stroke="#2f6f73" stroke-width="2.3" stroke-linecap="round"/>
+    </svg>
+    <div class="wave1"></div><div class="wave2"></div><div class="wave3"></div>
+    <div class="title">
+      <h1 class="serif">STILL RHODES</h1>
+      <div class="subtitle smallcaps">Meditation in Rhodes</div>
+      <div class="tag">a quiet moment for your mind during your stay</div>
+    </div>
+    <div class="card">
+      <h2 class="serif">Pause. Breathe. Return.</h2>
+      <p>A calm 60-minute meditation experience for visitors who want to feel Rhodes beyond the rush of travel.</p>
+    </div>
+    <div class="sessions">
+      <div class="box"><b>GROUP SESSION</b><br>60 min · Rhodes/Faliraki <span class="price">€10</span></div>
+      <div class="box"><b>PRIVATE SESSION</b><br>Tailored to your pace<br><span style="color:var(--gold)">Upon arrangement</span></div>
+    </div>
+    <footer><span>stillrhodes.com</span><span>Book on WhatsApp</span></footer>
+  </section>
+
+  <section class="page c2">
+    <div class="label">Concept 2 · Rhodes Postcard</div>
+    <div class="photo"><div class="sun"></div></div><div class="island"></div>
+    <h1 class="serif">Find<br>Stillness<br>in Rhodes</h1>
+    <div class="badge smallcaps">For visitors · 60 min · €10</div>
+    <div class="route">
+      <h2 class="serif">Between the Old Town and the sea, take one hour for yourself.</h2>
+      <p>Join Giorgos for a simple, grounded meditation session in Rhodes or Faliraki. No experience needed — just arrive, breathe, and let the island slow down with you.</p>
+      <div class="steps">
+        <div class="step"><b>1</b><br>Book by WhatsApp</div>
+        <div class="step"><b>2</b><br>Meet in Rhodes/Faliraki</div>
+        <div class="step"><b>3</b><br>Return lighter</div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div><b>GROUP</b><br>60 minutes · €10</div>
+      <div><b>PRIVATE</b><br>Upon arrangement</div>
+    </div>
+    <footer><span>Still Rhodes</span><span>stillrhodes.com</span></footer>
+  </section>
+
+  <section class="page c3">
+    <div class="label">Concept 3 · Minimal Zen</div>
+    <div class="circle"></div><div class="dot"></div>
+    <svg class="zenlotus" viewBox="0 0 180 60" aria-hidden="true">
+      <path d="M90 5C102 22 102 38 90 53C78 38 78 22 90 5Z" fill="none" stroke="#2f6f73" stroke-width="3"/>
+      <path d="M86 28C58 27 37 38 26 55C55 57 76 50 90 53" fill="none" stroke="#c8a94c" stroke-width="3" stroke-linecap="round"/>
+      <path d="M94 28C122 27 143 38 154 55C125 57 104 50 90 53" fill="none" stroke="#c8a94c" stroke-width="3" stroke-linecap="round"/>
+      <path d="M18 56C55 64 125 64 162 56" fill="none" stroke="#2f6f73" stroke-width="3" stroke-linecap="round"/>
+    </svg>
+    <h1 class="serif">STILL RHODES</h1>
+    <div class="mini smallcaps">Meditation for travellers</div>
+    <div class="quote serif">“Silence is the language of everything.”</div>
+    <div class="copy">A soft landing in the middle of your holiday. Guided meditation with Giorgos in Rhodes or Faliraki.</div>
+    <div class="bar"><span>Group €10</span><span>Private sessions</span><span>WhatsApp booking</span></div>
+    <footer><span>stillrhodes.com</span><span class="cta">Book your session</span></footer>
+  </section>
+
+</div>
+</body>
+</html>
